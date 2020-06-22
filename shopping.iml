@@ -15,6 +15,7 @@
       <configuration>
         <fileset id="fileset" name="Spring" removed="false">
           <file>file://$MODULE_DIR$/src/spring.xml</file>
+          <file>file://$MODULE_DIR$/src/springMVC.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -39,5 +40,6 @@
     <orderEntry type="library" name="spring-expression-4.3.2.RELEASE" level="project" />
     <orderEntry type="library" name="spring-jdbc-4.3.2.RELEASE" level="project" />
     <orderEntry type="library" name="spring-tx-4.3.2.RELEASE" level="project" />
+    <orderEntry type="library" name="spring-web-4.3.2.RELEASE" level="project" />
   </component>
 </module>
