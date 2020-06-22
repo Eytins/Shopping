@@ -41,5 +41,6 @@
     <orderEntry type="library" name="spring-jdbc-4.3.2.RELEASE" level="project" />
     <orderEntry type="library" name="spring-tx-4.3.2.RELEASE" level="project" />
     <orderEntry type="library" name="spring-web-4.3.2.RELEASE" level="project" />
+    <orderEntry type="library" name="mybatis-3.2.8" level="project" />
   </component>
 </module>
