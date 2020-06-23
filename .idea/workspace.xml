@@ -7,18 +7,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5409db53-9f63-4fe8-9ed7-f777e425dbe3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/action/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/CheckCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/makeCode.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/springMVC.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/backend/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/backend/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/shopping/springMVC.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shopping.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/springMVC.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/springMVC.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/action/CodeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/action/StaffController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/constant/DictConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/constant/ResponseCodeConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/constant/StatusConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/Attache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/Dept.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/ProductType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/Sequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/Staff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/CodeErrorException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/DeptExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/LoginDisabledException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/LoginNameOrPasswordErrorException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/NoPromissionException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/PasswordErrorException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/ProductTypeExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/RequestParameterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/SatffNotExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/StaffExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/UserExistException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/UserNotLoginException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/IStaffMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/IUserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/IStaffService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/StaffServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/CreateCodeUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/DataUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/MD5Util.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/ParameterUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/ResponseResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/nmms.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/action/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/action/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,18 +87,22 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/zte/shopping" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\JavaProject\A大三下\shopping\web" />
-      <recent name="E:\JavaProject\A大三下\shopping\src" />
-      <recent name="E:\JavaProject\A大三下\shopping" />
+      <recent name="E:\JavaProject\A大三下\shopping\src\com\zte\shopping" />
+      <recent name="E:\JavaProject\A大三下\shopping\web\WEB-INF" />
+      <recent name="E:\JavaProject\A大三下\shopping\src\com\zte\shopping\util" />
+      <recent name="E:\JavaProject\A大三下\shopping\src\com\zte\shopping\service" />
+      <recent name="E:\JavaProject\A大三下\shopping\src\com\zte\shopping\mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.zte.shopping.util" />
@@ -159,7 +198,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592879943451</updated>
-      <workItem from="1592879945040" duration="2658000" />
+      <workItem from="1592879945040" duration="4798000" />
     </task>
     <servers />
   </component>
@@ -167,61 +206,65 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592882341172">
+    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592882778963">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882341172" />
+    <state x="479" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882778963" />
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1592881464216">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
     <state x="755" y="303" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592881464216" />
-    <state width="1382" height="305" key="GridCell.Tab.0.bottom" timestamp="1592882284451">
+    <state width="1382" height="305" key="GridCell.Tab.0.bottom" timestamp="1592884824749">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.0.bottom/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284451" />
-    <state width="1382" height="305" key="GridCell.Tab.0.center" timestamp="1592882284450">
+    <state width="1382" height="305" key="GridCell.Tab.0.bottom/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592884824749" />
+    <state width="1382" height="305" key="GridCell.Tab.0.center" timestamp="1592884824749">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.0.center/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284450" />
-    <state width="1382" height="305" key="GridCell.Tab.0.left" timestamp="1592882284450">
+    <state width="1382" height="305" key="GridCell.Tab.0.center/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592884824749" />
+    <state width="1382" height="305" key="GridCell.Tab.0.left" timestamp="1592884824749">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.0.left/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284450" />
-    <state width="1382" height="305" key="GridCell.Tab.0.right" timestamp="1592882284451">
+    <state width="1382" height="305" key="GridCell.Tab.0.left/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592884824749" />
+    <state width="1382" height="305" key="GridCell.Tab.0.right" timestamp="1592884824749">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.0.right/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284451" />
-    <state width="1382" height="305" key="GridCell.Tab.1.bottom" timestamp="1592882284347">
+    <state width="1382" height="305" key="GridCell.Tab.0.right/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592884824749" />
+    <state width="1382" height="305" key="GridCell.Tab.1.bottom" timestamp="1592882779780">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.1.bottom/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284347" />
-    <state width="1382" height="305" key="GridCell.Tab.1.center" timestamp="1592882284346">
+    <state width="1382" height="305" key="GridCell.Tab.1.bottom/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882779780" />
+    <state width="1382" height="305" key="GridCell.Tab.1.center" timestamp="1592882779780">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.1.center/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284346" />
-    <state width="1382" height="305" key="GridCell.Tab.1.left" timestamp="1592882284346">
+    <state width="1382" height="305" key="GridCell.Tab.1.center/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882779780" />
+    <state width="1382" height="305" key="GridCell.Tab.1.left" timestamp="1592882779780">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.1.left/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284346" />
-    <state width="1382" height="305" key="GridCell.Tab.1.right" timestamp="1592882284347">
+    <state width="1382" height="305" key="GridCell.Tab.1.left/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882779780" />
+    <state width="1382" height="305" key="GridCell.Tab.1.right" timestamp="1592882779780">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.1.right/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284347" />
-    <state width="1382" height="305" key="GridCell.Tab.2.bottom" timestamp="1592882284347">
+    <state width="1382" height="305" key="GridCell.Tab.1.right/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882779780" />
+    <state width="1382" height="305" key="GridCell.Tab.2.bottom" timestamp="1592882779780">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.2.bottom/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284347" />
-    <state width="1382" height="305" key="GridCell.Tab.2.center" timestamp="1592882284347">
+    <state width="1382" height="305" key="GridCell.Tab.2.bottom/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882779780" />
+    <state width="1382" height="305" key="GridCell.Tab.2.center" timestamp="1592882779780">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.2.center/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284347" />
-    <state width="1382" height="305" key="GridCell.Tab.2.left" timestamp="1592882284347">
+    <state width="1382" height="305" key="GridCell.Tab.2.center/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882779780" />
+    <state width="1382" height="305" key="GridCell.Tab.2.left" timestamp="1592882779780">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.2.left/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284347" />
-    <state width="1382" height="305" key="GridCell.Tab.2.right" timestamp="1592882284347">
+    <state width="1382" height="305" key="GridCell.Tab.2.left/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882779780" />
+    <state width="1382" height="305" key="GridCell.Tab.2.right" timestamp="1592882779780">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state width="1382" height="305" key="GridCell.Tab.2.right/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882284347" />
+    <state width="1382" height="305" key="GridCell.Tab.2.right/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882779780" />
+    <state width="212" height="477" key="HiddenNamespacesPopup" timestamp="1592882796533">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="212" height="477" key="HiddenNamespacesPopup/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1592882796533" />
   </component>
 </project>

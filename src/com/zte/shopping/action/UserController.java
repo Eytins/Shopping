@@ -1,22 +1,14 @@
 package com.zte.shopping.action;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
- * Created by Eytins
+ * 前台用户  --- 会员Hanlder
+ * @author liyan
+ *
  */
-
 @Controller
-public class UserController {
-
-    @RequestMapping("/showLogin")
-    public String showLogin(HttpServletRequest request, HttpServletResponse response){
-
-        return "backend/login";
-    }
-
+public class UserController 
+{
+	
 }
