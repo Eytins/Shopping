@@ -34,7 +34,7 @@
 
     <!-- 访问web，相当于controller -->
     <mvc:view-controller path="/showMain" view-name="main"/>
-    <mvc:view-controller path="/showLogin" view-name="backend/login"/>
+    <!--<mvc:view-controller path="/showLogin" view-name="backend/login"/>-->
 
     <!-- 4. 配置静态资源访问 xxx.js  xxx.css  图片 -->
     <mvc:default-servlet-handler/>

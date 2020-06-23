@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css" type="text/css"/>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        function changeImg() {
+            var codeImg = document.getElementById("codeImg");
+            //count++
+            now = new Date();
+            codeImg.src = "makeCode.jsp?code=" + now.getTime();
+        }
+    </script>
+
 </head>
 <body>
 <!-- 使用自定义css样式 div-signin 完成元素居中-->
@@ -51,7 +61,8 @@
                     </div>
                     <div class="col-sm-2">
                         <!-- 验证码图片加载（需引入验证码文件）图像高度经过测试，建议不要修改 -->
-                        <img class="img-rounded" src="images/image.jpg" alt="验证码" style="height: 32px; width: 70px;"/>
+                        <img class="img-rounded" src="${pageContext.request.contextPath}/WEB-INF/jsp/backend/makeCode.jsp"
+                             onclick="changeImg()" alt="点击更换" style="height: 32px; width: 70px;"/>
                     </div>
                     <div class="col-sm-2">
                         <button type="button" class="btn btn-link">看不清</button>
