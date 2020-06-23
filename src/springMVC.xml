@@ -2,9 +2,17 @@
 <beans
         xmlns="http://www.springframework.org/schema/beans"
         xmlns:mvc="http://www.springframework.org/schema/mvc"
+        xmlns:context="http://www.springframework.org/schema/context"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
-                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd">
+        xsi:schemaLocation="
+                           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+                          ">
+
+
+    <!-- 5.扫描action层包 -->
+    <context:component-scan base-package="com.zte.shopping.action"/>
 
     <!-- 1. 在web.xml配置文件中配置SpringMVC的心脏DispatcherServlet -->
 
@@ -24,7 +32,10 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <mvc:view-controller path="/showMain" view-name="main"/>
+
     <!-- 4. 配置静态资源访问 xxx.js  xxx.css  图片 -->
     <mvc:default-servlet-handler/>
+    <!-- <mvc:resources location="/" mapping="/**"/> -->
 
 </beans>

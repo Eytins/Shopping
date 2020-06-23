@@ -27,20 +27,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Spring-5.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Spring MVC-5.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="druid-1.1.22" level="project" />
-    <orderEntry type="library" name="jsqlparser-1.2" level="project" />
     <orderEntry type="library" name="commons-logging" level="project" />
-    <orderEntry type="library" name="spring-aop-4.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="spring-beans-4.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="spring-context-4.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="spring-context-support-4.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="spring-core-4.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="spring-expression-4.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="spring-jdbc-4.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="spring-tx-4.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="spring-web-4.3.2.RELEASE" level="project" />
-    <orderEntry type="library" name="mybatis-3.2.8" level="project" />
   </component>
 </module>
