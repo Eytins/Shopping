@@ -1,14 +1,13 @@
 package com.zte.shopping.action;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-/**
- * 前台用户  --- 会员Hanlder
- * @author liyan
- *
- */
 @Controller
-public class UserController 
-{
-	
+public class UserController {
+
+    @RequestMapping(value = "ShowMain")
+    public String showMain() {
+        return "main";
+    }
 }
