@@ -1,9 +1,12 @@
 package com.zte.shopping.mapper;
 
-import org.apache.ibatis.annotations.Param;
+import com.zte.shopping.entity.User;
 
-public interface IUserMapper {
-    int dologin(@Param(value = "username") String username,
-                @Param(value = "password") String password,
-                @Param(value = "userRole") String userRole);
+public interface IUserMapper
+{
+
+	/**
+	 * 添加会员
+	 */
+	void insertUser(User user);
 }

@@ -1,4 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh">
 <head>
     <meta charset="UTF-8" />
@@ -7,7 +9,7 @@
     <title>在线购物商城</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/style.css" />
-    <link rel="stylesheet" href="iconfont/iconfont.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/iconfont/iconfont.css">
     <script src="${pageContext.request.contextPath}/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="${pageContext.request.contextPath}/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
     <body>
@@ -16,7 +18,7 @@
                 <!-- logo start -->
                 <div class="navbar-header">
                     <a class="navbar-brand logo-style" href="/">
-                        <img class="brand-img" src="images/com-logo1.png" alt="logo" height="70">
+                        <img class="brand-img" src="${pageContext.request.contextPath}/images/com-logo1.png" alt="logo" height="70">
                     </a>
                 </div>
                 <!-- logo end -->

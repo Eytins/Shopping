@@ -1,22 +1,50 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper
-        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
 <mapper namespace="com.zte.shopping.mapper.IStaffMapper">
-    <sql id="staffColumn">staff_id,staff_name,login_name,password,phone,email,role,is_valid,create_date,create_staff_id,dept_id</sql>
-    <select id="staffLogin" resultMap="staffMapper">
-        select<include refid="staffColumn"/>from sys_staff where login_name=#{username} and password=#{password} and
-        role=#{userRole}
+  
+    <resultMap type="Staff" id="staffMapper">
+		<id property="staffId" column="staff_id" />
+		<result property="staffName" column="staff_name" />
+		<result property="loginName" column="login_name" />
+		<result property="password" column="password" />
+		<result property="phone" column="phone" />
+		<result property="email" column="email" />
+		<result property="role" column="role" />
+		<result property="isValid" column="is_valid" />
+		<result property="createDate" column="create_date" />
+	</resultMap>
+  
+    <sql id="staffColumn">
+		staff_id,
+		staff_name,
+		login_name,
+		password,
+		phone,
+		email,
+		role,
+		is_valid,
+		create_date,
+		create_staff_id,
+		dept_id
+	</sql>
+
+
+    <!-- 注册会员 (前台) -->
+    <insert id="insertUser" parameterType="user">
+		insert into 
+		    sys_user(user_name,login_name,password,phone,address,is_valid,regist_date)
+		values(#{userName}, #{loginName}, #{password}, #{phone}, #{address}, #{isValid}, #{registDate})
+	</insert>
+	
+	<!-- 根据账号、密码、是否有效、角色、查询有效的管理员信息 -->
+    <select id="selectByLoginNameAndPassword" resultMap="staffMapper">
+         select 
+             <include refid="staffColumn"></include>
+	     from 
+	         sys_staff
+		 where login_name = #{0} and password = #{1} and is_valid = #{2} and role = #{3}
     </select>
-    <resultMap type="SysStaff" id="staffMapper">
-        <id property="staffId" column="staff_id" />
-        <result property="staffName" column="staff_name" />
-        <result property="loginName" column="login_name" />
-        <result property="password" column="password" />
-        <result property="phone" column="phone" />
-        <result property="email" column="email" />
-        <result property="role" column="role" />
-        <result property="isValid" column="is_valid" />
-        <result property="createDate" column="create_date" />
-    </resultMap>
+	
+	
 </mapper>

@@ -10,6 +10,10 @@ public class ParameterUtil
 {
 	public static boolean isnull(String s)
 	{
-		return "".equals(s) || null == s;
+		if ("".equals(s) || null == s)
+		{
+			return true;
+		}
+		return false;
 	}
 }

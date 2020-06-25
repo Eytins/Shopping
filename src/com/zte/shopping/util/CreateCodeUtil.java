@@ -1,12 +1,15 @@
 package com.zte.shopping.util;
 
-import org.springframework.util.CollectionUtils;
-
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+
+import org.springframework.util.CollectionUtils;
+
+import com.alibaba.druid.util.StringUtils;
 
 public class CreateCodeUtil 
 {
