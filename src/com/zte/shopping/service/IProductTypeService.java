@@ -10,7 +10,7 @@ public interface IProductTypeService
 	 /**
 	  * 查询所有商品类型的列表
 	  */
-	 public List<ProductType> findAll();
+     List<ProductType> findAll();
 	 
 	
 	 /**
@@ -22,7 +22,7 @@ public interface IProductTypeService
 	  * 默认设置商品状态为启用
 	  * 
 	  */
-     public void addType(String name) throws RequestParameterException, ProductTypeExistException;
+     void addType(String name) throws RequestParameterException, ProductTypeExistException;
 
      
     /**
@@ -30,12 +30,12 @@ public interface IProductTypeService
  	 *   当选择的商品类型为启用,则改为禁用
  	 *   当选择的商品类型为禁用,则改为启用
  	 */
-	 public void modifyStatus(String id, String status);
+    void modifyStatus(String id, String status);
 
 	 /**
 	  * 根据 商品类型ID 查询   商品类型信息
 	  */
-	 public ProductType findById(String id) throws RequestParameterException;
+     ProductType findById(String id) throws RequestParameterException;
 
      /**
       * 修改 商品类型的名称
@@ -43,11 +43,11 @@ public interface IProductTypeService
       * 如果商品类型的名称不是原来的且数据库总已经存在了,则抛出异常
       * 
       */
-	 public void modifyName(String id, String name) throws ProductTypeExistException;
+     void modifyName(String id, String name) throws ProductTypeExistException;
 
 
 	 /**
 	  * 查询所有有效的商品类型
 	  */
-	 public List<ProductType> findEnableProductTypeList();
+     List<ProductType> findEnableProductTypeList();
 }

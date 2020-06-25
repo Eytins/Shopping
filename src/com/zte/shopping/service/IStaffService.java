@@ -1,16 +1,10 @@
 package com.zte.shopping.service;
 
-import java.util.List;
+import com.zte.shopping.entity.Staff;
+import com.zte.shopping.exception.*;
 
 import javax.servlet.http.HttpSession;
-
-import com.zte.shopping.entity.Staff;
-import com.zte.shopping.exception.CodeErrorException;
-import com.zte.shopping.exception.LoginDisabledException;
-import com.zte.shopping.exception.NoPromissionException;
-import com.zte.shopping.exception.RequestParameterException;
-import com.zte.shopping.exception.SatffNotExistException;
-import com.zte.shopping.exception.StaffExistException;
+import java.util.List;
 
 /**
  * 
@@ -32,7 +26,7 @@ public interface IStaffService
 	 * @param role       角色
 	 * @return Staff     返回管理员信息
 	 */
-    public Staff login(String loginName, String password, String code, HttpSession session, String role) throws CodeErrorException, SatffNotExistException;
+    Staff login(String loginName, String password, String code, HttpSession session, String role) throws CodeErrorException, SatffNotExistException;
 
     /**
      * 动态  模糊  查询   管理员信息
@@ -40,7 +34,7 @@ public interface IStaffService
      * @param deptId     部门ID
      * @return  List<Staff>   返回后台管理员信息列表
      */
-	public List<Staff> findFuzzyByParamList(Staff staffParameter, String deptId);
+    List<Staff> findFuzzyByParamList(Staff staffParameter, String deptId);
 
 	/**
 	 * 添加管理员
@@ -52,20 +46,20 @@ public interface IStaffService
 	 * 
 	 * 默认田间的员工为有效状态
 	 */
-	public void addStaff(Staff staff, String deptId, HttpSession session) throws LoginDisabledException, NoPromissionException, StaffExistException;
+    void addStaff(Staff staff, String deptId, HttpSession session) throws LoginDisabledException, NoPromissionException, StaffExistException;
 
 	/**
 	 * 做修改管理员操作时  查询出修改页面的管理员信息
 	 */
-	public Staff findById(String staffId) throws RequestParameterException;
+    Staff findById(String staffId) throws RequestParameterException;
 
 	/**
 	 * 修改员工管理员
 	 */
-	public void modifyStaff(Staff staff, String deptId) throws RequestParameterException;
+    void modifyStaff(Staff staff, String deptId) throws RequestParameterException;
 
 	/**
 	 * 管理员 启用/禁用
 	 */
-	public void modifyStaffStatus(String staffId, String isValid) throws RequestParameterException;
+    void modifyStaffStatus(String staffId, String isValid) throws RequestParameterException;
 }

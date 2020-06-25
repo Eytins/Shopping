@@ -35,7 +35,7 @@ public class StaffController {
     @RequestMapping("/login")
     public ModelAndView login(String loginName, String password, String code, String role, HttpSession session) {
         ModelAndView modelAndView = new ModelAndView();
-		
+
         try {
             Staff staff = staffService.login(loginName, password, code, session, role);
 
@@ -46,18 +46,12 @@ public class StaffController {
 
             modelAndView.setViewName("backend/main");
 
-        } catch (CodeErrorException e) {
+        } catch (CodeErrorException | SatffNotExistException e) {
             modelAndView.addObject("loginMsg", e.getMessage());
             modelAndView.setViewName("backend/login");
-
-        } catch (SatffNotExistException e) {
-            modelAndView.addObject("loginMsg", e.getMessage());
-            modelAndView.setViewName("backend/login");
-
         } catch (Exception e) {
             modelAndView.addObject("loginMsg", "服务器内部异常");
             modelAndView.setViewName("backend/login");
-
         }
 
         return modelAndView;

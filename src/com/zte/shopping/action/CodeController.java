@@ -17,54 +17,51 @@ import java.util.Random;
 
 /**
  * 验证码Handler
- * 
- * @author liyan
  *
+ * @author liyan
  */
 @Controller
 @RequestMapping("/code")
-public class CodeController 
-{
-	 /**
-	  * 生成验证码
-	  * 
-	  * http://localhost:8080/shopping_ssm/showLogin
-	  */
-	 @RequestMapping("/show")
-     public void show(HttpServletRequest request, HttpServletResponse response) throws ImageFormatException, IOException
-     {
-    	 Random random = new Random();
-    	 
-    	 // java.awt.image.BufferedImage
-    	 BufferedImage image = new BufferedImage(50, 20, BufferedImage.TYPE_INT_RGB);
-    	 
-    	 Graphics graphics = image.getGraphics();
-    	 graphics.fillRect(0, 0, 100, 20);
-    	 graphics.setColor( new Color( random.nextInt(256), random.nextInt(256), random.nextInt(256) )  );
-    	 graphics.setFont(new Font("宋体", Font.BOLD, 10));
-    	 
-    	 // 生成4位的随机数(数字和字母组合)
-    	 // StringBuffer code = CreateCodeUtil.createCode(random);
-    	 // 生成4位的纯数字验证码
-    	// StringBuffer code = CreateCodeUtil.createCodeNum(random);
-    	 // 生成 成语验证码
-    	 String code = CreateCodeUtil.createCodeIdiom(random);
-    	 
-    	 // 绘制验证码字符串
-    	 graphics.drawString(code.toString(), 5, 15);
-    	 
-    	 // 将验证码放入到session中
-    	 request.getSession().setAttribute("code", code.toString());
-    	 
-    	 // throws IOException
-    	 OutputStream out = response.getOutputStream();
-    	 
-    	 // 将验证码放入到图片中
-    	 JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
-    	 // throws ImageFormatException, IOException
-    	 encoder.encode(image);
-    	 
-     }
+public class CodeController {
+    /**
+     * 生成验证码
+     * <p>
+     * http://localhost:8080/shopping_ssm/showLogin
+     */
+    @RequestMapping("/show")
+    public void show(HttpServletRequest request, HttpServletResponse response) throws ImageFormatException, IOException {
+        Random random = new Random();
 
-	
+        // java.awt.image.BufferedImage
+        BufferedImage image = new BufferedImage(50, 20, BufferedImage.TYPE_INT_RGB);
+
+        Graphics graphics = image.getGraphics();
+        graphics.fillRect(0, 0, 100, 20);
+        graphics.setColor(new Color(random.nextInt(256), random.nextInt(256), random.nextInt(256)));
+        graphics.setFont(new Font("宋体", Font.BOLD, 10));
+
+        // 生成4位的随机数(数字和字母组合)
+        // StringBuffer code = CreateCodeUtil.createCode(random);
+        // 生成4位的纯数字验证码
+        StringBuffer code = CreateCodeUtil.createCodeNum(random);
+        // 生成 成语验证码
+        // String code = CreateCodeUtil.createCodeIdiom(random);
+
+        // 绘制验证码字符串
+        graphics.drawString(String.valueOf(code), 5, 15);
+
+        // 将验证码放入到session中
+        request.getSession().setAttribute("code", code);
+
+        // throws IOException
+        OutputStream out = response.getOutputStream();
+
+        // 将验证码放入到图片中
+        JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(out);
+        // throws ImageFormatException, IOException
+        encoder.encode(image);
+
+    }
+
+
 }
