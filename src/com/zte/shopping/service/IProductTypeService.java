@@ -1,10 +1,9 @@
 package com.zte.shopping.service;
 
+import java.util.List;
 import com.zte.shopping.entity.ProductType;
 import com.zte.shopping.exception.ProductTypeExistException;
 import com.zte.shopping.exception.RequestParameterException;
-
-import java.util.List;
 
 public interface IProductTypeService 
 {

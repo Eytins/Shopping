@@ -1,23 +1,27 @@
 package com.zte.shopping.service.impl;
 
+import java.util.Date;
+import java.util.List;
+import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import com.zte.shopping.constant.DictConstant;
 import com.zte.shopping.constant.StatusConstant;
 import com.zte.shopping.entity.Dept;
 import com.zte.shopping.entity.Staff;
-import com.zte.shopping.exception.*;
+import com.zte.shopping.exception.CodeErrorException;
+import com.zte.shopping.exception.LoginDisabledException;
+import com.zte.shopping.exception.NoPromissionException;
+import com.zte.shopping.exception.RequestParameterException;
+import com.zte.shopping.exception.SatffNotExistException;
+import com.zte.shopping.exception.StaffExistException;
 import com.zte.shopping.mapper.IStaffMapper;
 import com.zte.shopping.service.IStaffService;
 import com.zte.shopping.util.DataUtil;
 import com.zte.shopping.util.MD5Util;
 import com.zte.shopping.util.ParameterUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
-import javax.servlet.http.HttpSession;
-import java.util.Date;
-import java.util.List;
 
 @Service
 @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)

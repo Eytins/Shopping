@@ -1,9 +1,11 @@
 package com.zte.shopping.util;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -55,7 +57,8 @@ public class CreateCodeUtil
     	 ArrayList<String> al = new ArrayList<String>();
     	 
          // 随机读取idiom.properties中的一行    其中任意的一行就是一个成语
-    	 BufferedReader br = new BufferedReader(new FileReader("D:/liyan/gongda/shopping/src/idiom.txt"));
+    	 
+    	 BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("D:/liyan/gongda/shopping/src/idiom.txt"), "utf-8"));
     	 String str = "";
     	 while ((str = br.readLine()) != null)
     	 {

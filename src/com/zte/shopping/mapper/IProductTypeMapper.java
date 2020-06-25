@@ -1,8 +1,7 @@
 package com.zte.shopping.mapper;
 
-import com.zte.shopping.entity.ProductType;
-
 import java.util.List;
+import com.zte.shopping.entity.ProductType;
 
 public interface IProductTypeMapper 
 {

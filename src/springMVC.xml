@@ -26,10 +26,10 @@
 
         <!-- 要访问的页面  /WEB-INF/jsp/xxx.jsp -->
         <!--  配置要访问页面的前缀   -->
-        <property name="prefix" value="/WEB-INF/jsp/"></property>
+        <property name="prefix" value="/WEB-INF/jsp/"/>
 
         <!-- 配置要访问页面的后缀 -->
-        <property name="suffix" value=".jsp"></property>
+        <property name="suffix" value=".jsp"/>
     </bean>
 
     <!-- 访问前台门户系统的主界面   -->
@@ -41,7 +41,10 @@
     <mvc:view-controller path="/showLogin" view-name="backend/login"/>
 
     <!-- 4. 配置静态资源访问 xxx.js  xxx.css  图片 -->
-    <!--<mvc:default-servlet-handler/>-->
-    <mvc:resources location="/" mapping="/**"/>
+    <!-- <mvc:default-servlet-handler/> -->
+    <!-- <mvc:resources location="/" mapping="/**"/> -->
+
+    <mvc:default-servlet-handler/>
+    <mvc:resources mapping="/js/**" location="/js/"/>
 
 </beans>

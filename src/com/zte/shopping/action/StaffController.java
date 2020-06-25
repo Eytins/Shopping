@@ -35,7 +35,7 @@ public class StaffController {
     @RequestMapping("/login")
     public ModelAndView login(String loginName, String password, String code, String role, HttpSession session) {
         ModelAndView modelAndView = new ModelAndView();
-
+		
         try {
             Staff staff = staffService.login(loginName, password, code, session, role);
 

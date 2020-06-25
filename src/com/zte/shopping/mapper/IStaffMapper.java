@@ -1,8 +1,8 @@
 package com.zte.shopping.mapper;
 
-import com.zte.shopping.entity.Staff;
-
 import java.util.List;
+
+import com.zte.shopping.entity.Staff;
 
 public interface IStaffMapper 
 {

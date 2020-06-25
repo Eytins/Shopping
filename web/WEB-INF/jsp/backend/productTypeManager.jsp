@@ -12,151 +12,20 @@
 	    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	    <title>后台商品类型管理页面</title>
 	    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.css" />
+	    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrapValidator.css" />
 	    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/index.css" />
-	    <script src="${pageContext.request.contextPath }/js/jquery.js" type="text/javascript" charset="utf-8"></script>
-	    <script src="${pageContext.request.contextPath }/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-	    <script src="${pageContext.request.contextPath }/js/userSetting.js" type="text/javascript" charset="utf-8"></script>
+	    
+	    <script src="${pageContext.request.contextPath}/js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="${pageContext.request.contextPath}/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="${pageContext.request.contextPath}/js/bootstrapValidator.js" type="text/javascript" charset="utf-8"></script>
+	    <script src="${pageContext.request.contextPath}/js/userSetting.js" type="text/javascript" charset="utf-8"></script>
 	    
 	    <!-- 引入bootstrap分页插件 -->
 	    <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap-paginator.js"></script>
 	    
 	    <script type="text/javascript">
 	         
-	         $(function()
-	         {
-	              var pages;
-	              
-	              // ${pageProductTypeList.pages } 对应PageInfo对象中的pages;
-	              if ("${pageProductTypeList.pages }" == 0)
-	              {
-	                   pages = 1;
-	              }else 
-	              {
-	                   pages = "${pageProductTypeList.pages }";
-	              }
-	              
-	              var options = 
-	              {
-	                   bootstrapMajorVersion : 3,                        // bootstrap版本 (此项目中所有的页面都是用bootstrap 3画的) 
-	                   currentPage  : "${pageProductTypeList.pageNum }", // pageNum对应PageInfo对象中的字段pageNum
-	                   totalPages : pages,
-	                   aligment : "center",
-	                   pageUrl  : function(type, page, current)
-	                   {
-	                        return "${pageContext.request.contextPath }/type/findAll?pageNo=" + page;
-	                   }
-	              };
-	              
-	              $("#productTypePage").bootstrapPaginator(options);
-	              
-	              
-	              $("#addProductType").click(function()
-	              {
-	                   $.ajax(
-	                           {
-	                               type : "post",
-	                               url  : "${pageContext.request.contextPath }/type/addType",
-	                               data : {"name" : $("#productTypeName").val() },
-	                               dataType : "json",
-	                               success  : function(result)
-	                               {
-	                                    if (result.responseCode == 1)
-	                                    {
-	                                         // alert(1111111);
-	                                         location.href = "${pageContext.request.contextPath }/type/findAll?pageNo=" + ${pageProductTypeList.pageNum};
-	                                    }else
-	                                    {
-	                                         $("#errorMsg").tooptip(
-	                                         {
-	                                               // alert(2222222);
-	                                               title : "error",
-	                                               placement: "center",
-	                                               template : "<div class='tooltip errorMsg'>" +  result.message + "</div>",
-	                                               tigger  : "manual"
-	                                         }).tooltip("show");
-	                                    }
-	                               },
-	                               error : function()
-				                   {
-				                        alert("服务器内容错误!");
-				                   }
-	                           }
-	                     );
-	              });
-	              
-	              
-	              
-	              $("input[name='toModifyType']").click(function()
-	              {
-	                   $.ajax(
-			                   {
-			                       type : "post",
-	                               url  : "${pageContext.request.contextPath }/type/findById",
-	                               data : {"id" : $(this).attr("data-value") },
-	                               dataType : "json",
-	                               success  : function(result)
-	                               {
-	                                    if (result.responseCode == 1)
-	                                    {
-	                                         // 页面设置 商品类型ID 字段的值
-	                                         $("#modifyTypeId").val(result.returnObject.id);
-	                                         
-	                                         // 页面设置 商品类型名称 字段的值
-	                                         $("#modifyTypeName").val(result.returnObject.name);
-	                                    }else
-	                                    {
-	                                         $("#errorMsg").tooptip(
-	                                         {
-	                                               title : "error",
-	                                               placement: "center",
-	                                               template : "<div class='tooltip errorMsg'>" +  result.message + "</div>",
-	                                               tigger  : "manual"
-	                                         }).tooltip("show");
-	                                    }
-	                               },
-	                               error : function()
-				                   {
-				                        alert("服务器内容错误!");
-				                   }  
-			                   }
-			             );
-	              });
-	              
-	              
-	              $("#modifyType").click(function()
-	              {
-	                    $.ajax(
-	                    {
-	                         type : "post",
-	                         url  : "${pageContext.request.contextPath }/type/modifyName",
-	                         data : {
-	                                    "id"   : $("#modifyTypeId").val(), 
-	                                    "name" : $("#modifyTypeName").val() 
-	                                },
-	                         dataType : "json",
-	                         success : function(result)
-	                         {
-	                              if (result.responseCode == 1)
-                                  {
-                                       location.href = "${pageContext.request.contextPath }/type/findAll?pageNo=" + ${pageProductTypeList.pageNum };
-                                  }else
-                                  {
-                                        $("#errorMsg").tooptip(
-                                        {
-                                              title : "error",
-                                              placement: "center",
-                                              template : "<div class='tooltip errorMsg'>" +  result.message + "</div>",
-                                              tigger  : "manual"
-                                        }).tooltip("show");
-                                  }
-	                         }
-	                    
-	                    });
-	              
-	              });
-	              
-	         });
-	         
+	        
 	    </script>
 	</head>
 	
@@ -167,34 +36,40 @@
 	            <h3 class="panel-title">商品类型管理&nbsp;&nbsp;&nbsp;&nbsp;<span id="errorMsg" data-toggle="tooltip"></span></h3>
 	        </div>
 	        <div class="panel-body">
-	            <input type="button" value="添加商品类型" class="btn btn-primary" id="doAddProTpye">
-	            <div class="modal fade" tabindex="-1" id="ProductType">
-	                <!-- 窗口声明 -->
+	        
+	            <form id="addProductTypeId" action="${pageContext.request.contextPath}/type/addType" method="post">
+	             <input type="button" value="添加商品类型" class="btn btn-primary" id="doAddProTpye">
+	             <div class="modal fade" tabindex="-1" id="ProductType">
+	                <!-- 添加商品类型模态框  窗口声明  start -->
 	                <div class="modal-dialog modal-lg">
-	                    <!-- 内容声明 -->
-	                    <div class="modal-content">
-	                        <!-- 头部、主体、脚注 -->
-	                        <div class="modal-header">
-	                            <button class="close" data-dismiss="modal">&times;</button>
-	                            <h4 class="modal-title">添加商品类型信息</h4>
-	                        </div>
-	                        <div class="modal-body text-center">
-	                            <div class="row text-right">
-	                                <label for="productTypeName" class="col-sm-4 control-label">类型名称:</label>
-	                                <div class="col-sm-4">
-	                                    <input type="text" class="form-control" id="productTypeName">
-	                                </div>
-	                            </div>
-	                            <br>
-	                        </div>
-	                        <div class="modal-footer">
-	                            <!-- 添加:  id="addProductType" -->
-	                            <button class="btn btn-primary addProductType" id="addProductType">添加</button>
-	                            <button class="btn btn-primary cancel" data-dismiss="modal">取消</button>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
+	                  
+		                    <!-- 内容声明 -->
+		                    <div class="modal-content">
+		                        <!-- 头部、主体、脚注 -->
+		                        <div class="modal-header">
+		                            <button class="close" data-dismiss="modal">&times;</button>
+		                            <h4 class="modal-title">添加商品类型信息</h4>
+		                        </div>
+		                        <div class="modal-body text-center">
+		                            <div class="row text-right">
+		                                <label for="productTypeName" class="col-sm-4 control-label">类型名称:</label>
+		                                <div class="col-sm-4">
+		                                    <input type="text" class="form-control" id="productTypeName" name="productTypeName">
+		                                </div>
+		                            </div>
+		                            <br>
+		                        </div>
+		                        <div class="modal-footer">
+		                            <!-- 添加:  id="addProductType" -->
+		                            <button class="btn btn-primary addProductType" id="addProductType">添加</button>
+		                            <button class="btn btn-primary cancel" data-dismiss="modal">取消</button>
+		                        </div>
+		                    </div>
+		                 </div>
+	                <!-- 添加商品类型模态框  窗口声明  end -->
+	              </div>
+	            </form>
+	           
 	            <br>
 	            <br>
 	            <div class="show-list">

@@ -1,10 +1,9 @@
 package com.zte.shopping.util;
 
-import sun.misc.BASE64Encoder;
-
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import sun.misc.BASE64Encoder;
 
 /**
  * MD5加密 工具类
