@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zte.shopping.dao.IUserDao">
+
+    <resultMap type="User" id="userMapper">
+        <id property="userId" column="user_id"/>
+        <result property="userName" column="user_name"/>
+        <result property="loginName" column="login_name"/>
+        <result property="password" column="password"/>
+        <result property="phone" column="phone"/>
+        <result property="address" column="address"/>
+        <result property="isValid" column="is_valid"/>
+        <result property="registDate" column="regist_date"/>
+    </resultMap>
+
+
+    <sql id="userColumn">
+        user_id,
+        user_name,
+        login_name,
+        password,
+        phone,
+        address,
+        is_valid,
+        regist_date
+    </sql>
+
+    <!-- 会员组合条件查询(动态查询) -->
+    <select id="selectByParamList" parameterType="user" resultMap="userMapper">
+        select
+        <include refid="userColumn"/>
+        from
+        sys_user
+        <where>
+            <if test="userName != null and userName !='' ">
+                <bind name="userName" value="'%' + _parameter.userName + '%'"/>
+                and user_name like #{userName} escape '/'
+            </if>
+
+            <if test="loginName != null and loginName !='' ">
+                <bind name="loginName" value="'%' + _parameter.loginName + '%'"/>
+                and user_name like #{loginName} escape '/'
+            </if>
+
+            <if test="phone != null and phone !='' ">
+                <bind name="phone" value="'%' + _parameter.phone + '%'"/>
+                and phone like #{phone} escape '/'
+            </if>
+
+            <if test="address != null and address !='' ">
+                <bind name="address" value="'%' + _parameter.address + '%'"/>
+                and address like #{address} escape '/'
+            </if>
+
+            <if test="isValid != null and isValid !='' and isValid != -1 or isValid == 0">
+                and is_valid like #{isValid}
+            </if>
+        </where>
+    </select>
+
+    <!--  根据  会员id 查询会员信息  -->
+    <select id="selectById" parameterType="integer" resultMap="userMapper">
+        select
+        <include refid="userColumn"/>
+        from
+        sys_user
+        where
+        user_id = #{id}
+    </select>
+
+    <!-- 根据  会员id 与  账号  查询符合条件的用户信息(修改会员信息 服务) -->
+    <select id="selectByIdAndLoginName" resultMap="userMapper">
+        select
+        <include refid="userColumn"/>
+        from
+        sys_user
+        where
+        login_name = #{1}
+        and
+        user_id != #{0}
+    </select>
+
+    <!-- 根据  会员id  修改会员信息 -->
+    <update id="updateById" parameterType="user">
+        update
+            sys_user
+        set user_name  = #{userName},
+            login_name = #{loginName},
+            phone      = #{phone},
+            address    = #{address}
+        where user_id = #{userId}
+    </update>
+
+
+    <!--  根据  会员id  修改对应会员的状态 -->
+    <update id="updateStatus">
+        update
+            sys_user
+        set is_valid = #{1}
+        where user_id = #{0}
+    </update>
+
+    <!--
+        (前台) 个人中心 根据会员id 修改会员 基本资料(会员的电话以及地址 )
+    -->
+    <update id="updateUser">
+        update
+            sys_user
+        set phone   = #{1},
+            address = #{2}
+        where user_id = #{0}
+    </update>
+
+    <!-- 注册会员 (前台) -->
+    <insert id="insertUser" parameterType="user">
+        insert into sys_user(user_name, login_name, password, phone, address, is_valid, regist_date)
+        values (#{userName}, #{loginName}, #{password}, #{phone}, #{address}, #{isValid}, #{registDate})
+    </insert>
+
+    <!-- 根据   账号   查询会员信息 (前台)  -->
+    <select id="selectByLoginName" parameterType="string" resultMap="userMapper">
+        select
+        <include refid="userColumn"/>
+        from
+        sys_user
+        where
+        login_name = #{loginName}
+    </select>
+
+    <!-- 根据  账号    密码  是否有效    查询对应的会员信息 (前台)  -->
+    <select id="selectByLoginNameAndPassword" resultMap="userMapper">
+        select
+        <include refid="userColumn"/>
+        from
+        sys_user
+        where
+        login_name = #{0}
+        and
+        password = #{1}
+        and
+        is_valid = #{2}
+    </select>
+
+    <!-- 密码会员修改 (前台 ) -->
+    <update id="updatePassword">
+        update
+            sys_user
+        set password = #{1}
+        where user_id = #{0}
+    </update>
+</mapper>

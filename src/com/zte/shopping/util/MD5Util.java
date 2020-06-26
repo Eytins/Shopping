@@ -2,16 +2,15 @@ package com.zte.shopping.util;
 
 import sun.misc.BASE64Encoder;
 
-import java.nio.charset.StandardCharsets;
+import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * MD5加密 工具类
- * <p>
- * MD5加密算法在国外至今没有被破解
- * 但是到中国没多久就被中国的3个教授破解了
+ * Created by Eytins
  */
+
+
 public class MD5Util {
     public static String md5(String str) {
         try {
@@ -20,7 +19,7 @@ public class MD5Util {
 
             // str.getBytes("utf-8") 编译期异常
             // java.io.UnsupportedEncodingException
-            byte[] byteArr = md.digest(str.getBytes(StandardCharsets.UTF_8));
+            byte[] byteArr = md.digest(str.getBytes("utf-8"));
 
             // 虽然加密了,但是看上去像乱码(堄{溽觰驛?鮽堲)
             // return new String(byteArr);
@@ -31,6 +30,8 @@ public class MD5Util {
             return encoder.encode(byteArr);
         } catch (NoSuchAlgorithmException e) {
             e.printStackTrace();
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
         }
         return str;
     }
@@ -40,7 +41,7 @@ public class MD5Util {
      * 不要用main()方法
      */
     public static void main(String[] args) {
-        System.out.println(md5("admin"));
+        System.out.println(md5("wangwu"));
     }
 
 }

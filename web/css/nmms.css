@@ -1,8 +1,9 @@
-.errorMsg{
- 		width:180px;
- 		line-height:30px;
- 		background:rgba(255,0,0,0.6);
- 		color:#fff;
- 		border-radius:5px;
- 		text-align: center;
- 	}
+.errorMsg
+{
+	width:180px;
+	line-height:30px;
+	background:rgba(255,0,0,0.6);
+	color:#fff;
+	border-radius:5px;
+	text-align: center;
+}

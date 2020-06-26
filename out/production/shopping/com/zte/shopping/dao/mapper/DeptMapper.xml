@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zte.shopping.dao.IDeptDao">
+
+    <sql id="deptColumn">
+        dept_id,
+          dept_name,
+          dept_no,
+          father_dept_id,
+          remark,
+          create_date,
+          create_staff_id,
+          is_valid
+    </sql>
+
+    <resultMap type="Dept" id="deptMapper">
+        <id property="deptId" column="dept_id"/>
+        <result property="deptName" column="dept_name"/>
+        <result property="deptNo" column="dept_no"/>
+        <result property="remark" column="remark"/>
+        <result property="isValid" column="is_valid"/>
+
+        <association property="fatherDept" column="father_dept_id" javaType="Dept">
+            <id property="deptId" column="father_dept_id"/>
+            <result property="deptName" column="father_dept_name"/>
+        </association>
+    </resultMap>
+
+
+    <select id="selectAll" resultMap="deptMapper">
+        select d.dept_id,
+               d.dept_name,
+               d.dept_no,
+               d.remark,
+               d.is_valid,
+               fd.dept_id   'father_dept_id',
+               fd.dept_name 'father_dept_name'
+        from sys_dept d
+                 left join
+             sys_dept fd
+             on
+                 d.father_dept_id = fd.dept_id
+    </select>
+
+    <!-- 添加部门之前判断 要添加的部门名称在DB中是否存在 -->
+    <select id="selectByName" parameterType="string" resultMap="deptMapper">
+        select
+        <include refid="deptColumn"/>
+        from
+        sys_dept
+        where
+        dept_name = #{name}
+    </select>
+
+    <!-- 添加父部门 -->
+    <insert id="insertFatherDept" parameterType="dept">
+        insert into sys_dept(dept_name, dept_no, remark, create_date, create_staff_id, is_valid)
+        values (#{deptName}, #{deptNo}, #{remark}, #{createDate}, #{staff.staffId}, #{isValid})
+    </insert>
+
+    <!-- 添加子部门 -->
+    <insert id="insertSonDept" parameterType="dept">
+        insert into sys_dept(dept_name, dept_no, remark, create_date, create_staff_id, is_valid, father_dept_id)
+        values (#{deptName}, #{deptNo}, #{remark}, #{createDate}, #{staff.staffId}, #{isValid}, #{fatherDept.deptId})
+    </insert>
+
+    <!-- 子部门的 启用/禁用 -->
+    <update id="updateStatus">
+        update
+            sys_dept
+        set is_valid = #{1}
+        where dept_id = #{0}
+    </update>
+
+    <!-- 跳出 修改部门信息  页面时  根据部门id查询要修改的部门信息 -->
+    <select id="selectById" parameterType="integer" resultMap="deptMapper">
+        select
+        <include refid="deptColumn"/>
+        from
+        sys_dept
+        where
+        dept_id = #{id}
+    </select>
+
+    <!-- 修改部门信息时   根据部门ID和部门名称查询部门信息(判断该部门名称 是否  已经存在?)   -->
+    <select id="selectByIdAndName" resultMap="deptMapper">
+        select
+        <include refid="deptColumn"/>
+        from
+        sys_dept
+        where
+        dept_id = #{0}
+        and
+        dept_name = #{1}
+    </select>
+
+    <!-- 修改部门信息 -->
+    <update id="updateDept">
+        update
+            sys_dept
+        set dept_name = #{1},
+            remark    = #{2}
+        where dept_id = #{0}
+    </update>
+
+    <!--   管理员管理页面: 点击 添加管理员   时 加载 有效的部门信息列表 -->
+    <select id="selectEnabledDeptList" parameterType="integer" resultMap="deptMapper">
+        select
+        <include refid="deptColumn"/>
+        from
+        sys_dept
+        where
+        is_valid = #{isValid}
+    </select>
+</mapper>

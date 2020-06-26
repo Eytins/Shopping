@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zte.shopping.dao.IStaffDao">
+
+    <resultMap type="Staff" id="staffMapper">
+        <id property="staffId" column="staff_id"/>
+        <result property="staffName" column="staff_name"/>
+        <result property="loginName" column="login_name"/>
+        <result property="password" column="password"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="role" column="role"/>
+        <result property="isValid" column="is_valid"/>
+        <result property="createDate" column="create_date"/>
+    </resultMap>
+
+    <resultMap type="Staff" id="staffDetailMapper">
+        <id property="staffId" column="staff_id"/>
+        <result property="staffName" column="staff_name"/>
+        <result property="loginName" column="login_name"/>
+        <result property="phone" column="phone"/>
+        <result property="email" column="email"/>
+        <result property="role" column="role"/>
+        <result property="isValid" column="is_valid"/>
+
+        <association property="dept" column="dept_id" javaType="Dept">
+            <id property="deptId" column="dept_id"/>
+            <result property="deptName" column="dept_name"/>
+            <result property="isValid" column="d.is_valid"/>
+        </association>
+    </resultMap>
+
+    <sql id="staffColumn">
+        staff_id,
+		staff_name,
+		login_name,
+		password,
+		phone,
+		email,
+		role,
+		is_valid,
+		create_date,
+		create_staff_id,
+		dept_id
+    </sql>
+
+    <!-- 根据账号、密码、是否有效、角色、查询有效的管理员信息 -->
+    <select id="selectByLoginNameAndPassword" resultMap="staffMapper">
+        select
+        <include refid="staffColumn"></include>
+        from
+        sys_staff
+        where login_name = #{0} and password = #{1} and is_valid = #{2} and role = #{3}
+    </select>
+
+    <!-- 动态  模糊  查询   管理员信息 -->
+    <select id="selectFuzzyByParams" parameterType="staff" resultMap="staffDetailMapper">
+        select
+        s.staff_id,
+        s.staff_name,
+        s.login_name,
+        s.phone,
+        s.email,
+        s.role,
+        s.is_valid,
+        d.dept_id,
+        d.dept_name,
+        d.is_valid 'd.is_valid'
+        from
+        sys_staff s
+        left join
+        sys_dept d
+        on s.dept_id = d.dept_id
+        <where>
+            <if test="staffName != null and staffName != '' ">
+                <bind name="staffName" value="'%' + _parameter.staffName + '%'"/>
+                and staff_name like #{staffName} escape '/'
+            </if>
+
+            <if test="loginName != null and loginName != '' ">
+                <bind name="loginName" value="'%' + _parameter.loginName + '%'"/>
+                and login_name like #{loginName} escape '/'
+            </if>
+
+            <if test="phone != null and phone != '' ">
+                <bind name="phone" value="'%' + _parameter.phone +'%'"/>
+                and phone like #{phone} escape '/'
+            </if>
+
+            <if test="email != null and email != '' ">
+                <bind name="email" value="'%' + _parameter.email +'%'"/>
+                and email like #{email} escape '/'
+            </if>
+
+            <if test="dept != null">
+                and s.dept_id = #{dept.deptId}
+            </if>
+
+            <if test="role != -1 and role != null and role != '' ">
+                and role = #{role}
+            </if>
+
+            <if test="isValid != null and isValid != '' and isValid != -1 or isValid == 0">
+                and s.is_valid = #{isValid}
+            </if>
+        </where>
+    </select>
+
+    <!-- 添加 管理员 时 的校验:该账号已经存在 -->
+    <select id="selectByLoginName" parameterType="string" resultMap="staffMapper">
+        select
+        <include refid="staffColumn"/>
+        from
+        sys_staff
+        where
+        login_name = #{loginName}
+    </select>
+
+    <!-- 添加管理员 -->
+    <insert id="insertStaff" parameterType="staff">
+        insert into sys_staff(staff_name, login_name, password, phone, email, dept_id, role, is_valid, create_date,
+                              create_staff_id)
+        values (#{staffName}, #{loginName}, #{password}, #{phone}, #{email}, #{dept.deptId}, #{role}, #{isValid},
+                #{createDate}, #{createStaff.staffId})
+    </insert>
+
+    <!-- 修改管理员   时查询  要修改的管理员信息 -->
+    <select id="selectById" parameterType="integer" resultMap="staffDetailMapper">
+        select s.staff_id,
+               s.staff_name,
+               s.login_name,
+               s.phone,
+               s.email,
+               s.role,
+               s.is_valid,
+               d.dept_id,
+               d.dept_name,
+               d.is_valid 'd.is_valid'
+        from sys_staff s
+                 left join
+             sys_dept d
+             on
+                 s.dept_id = d.dept_id
+        where s.staff_id = #{staffId}
+    </select>
+
+    <!-- 修改管理员 -->
+    <update id="updateStaff">
+        update
+            sys_staff
+        set staff_name = #{staffName},
+            phone      = #{phone},
+            email      = #{email},
+            role       = #{role},
+            dept_id    = #{dept.deptId}
+        where staff_id = #{staffId}
+    </update>
+
+    <!-- 管理员 启用/禁用 -->
+    <update id="updateStaffStatus">
+        update
+            sys_staff
+        set is_valid = #{1}
+        where staff_id = #{0}
+    </update>
+</mapper>

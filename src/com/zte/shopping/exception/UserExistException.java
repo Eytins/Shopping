@@ -1,33 +1,27 @@
 package com.zte.shopping.exception;
 
 /**
- * 该会员已存在自定义异常
- * 
- * @author liyan
- *
+ * Created by Eytins
  */
-public class UserExistException extends Exception 
-{
-	private static final long serialVersionUID = 1L;
 
-	public UserExistException() 
-	{
-		
-	}
+public class UserExistException extends Exception {
 
-	public UserExistException(String message) 
-	{
-		super(message);
-	}
+    private static final long serialVersionUID = 1L;
 
-	public UserExistException(Throwable cause)
-	{
-		super(cause);
-	}
+    public UserExistException() {
 
-	public UserExistException(String message, Throwable cause) 
-	{
-		super(message, cause);
-	}
+    }
+
+    public UserExistException(String message) {
+        super(message);
+    }
+
+    public UserExistException(Throwable cause) {
+        super(cause);
+    }
+
+    public UserExistException(String message, Throwable cause) {
+        super(message, cause);
+    }
 
 }

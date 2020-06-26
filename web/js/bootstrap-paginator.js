@@ -1,5 +1,5 @@
 /**
- * bootstrap-paginator.js v0.5
+${pageContext.request.contextPath } * bootstrap-paginator.js v0.5
  * --
  * Copyright 2013 Yun Lai <lyonlai1984@gmail.com>
  * --
