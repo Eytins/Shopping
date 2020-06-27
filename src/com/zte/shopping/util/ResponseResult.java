@@ -5,7 +5,6 @@ package com.zte.shopping.util;
  */
 
 public class ResponseResult {
-
     // 响应状态码,由程序员确定
     private Integer responseCode;
 

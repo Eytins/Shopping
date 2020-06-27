@@ -4,9 +4,7 @@ package com.zte.shopping.exception;
  * Created by Eytins
  */
 
-
 public class PasswordErrorException extends Exception {
-
     private static final long serialVersionUID = 1L;
 
     public PasswordErrorException() {
@@ -28,5 +26,6 @@ public class PasswordErrorException extends Exception {
     public PasswordErrorException(Throwable cause) {
         super(cause);
     }
+
 
 }

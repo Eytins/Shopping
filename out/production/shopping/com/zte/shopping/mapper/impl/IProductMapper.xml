@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zte.com.zte.shopping.mapper.IProductMapper">
+
+    <sql id="productColumn">
+           product_id,
+           product_no,
+           name,
+           price,
+           image,
+           product_type_id
+      </sql>
+    <resultMap type="SysProduct" id="productMapper">
+        <id property="productId" column="product_id"/>
+        <result property="productNo" column="product_no"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+        <result property="image" column="image"/>
+        <!--将SysProductType中的-->
+        <association property="sysProductType" javaType="SysProductType" column="product_type_id">
+            <id property="id" column="id"/>
+            <result property="name" column="pt.name"/>
+            <result property="status" column="status"/>
+        </association>
+    </resultMap>
+
+
+    <select id="selectAll" resultMap="productMapper">
+           select
+               p.product_id,
+               p.product_no,
+               p.name,
+               p.price,
+               pt.id,
+               pt.name 'pt.name',
+               pt.status
+          from
+               sys_product p
+          left join
+               sys_product_type pt
+          on
+               p.product_type_id = pt.id
+      </select>
+
+    <insert id="insertProduct" parameterType="SysProduct">
+           insert into
+               sys_product
+                  (product_no, name, price, image, product_type_id)
+           values
+                  (#{productNo}, #{name}, #{price}, #{image}, #{productType.id})
+      </insert>
+</mapper>

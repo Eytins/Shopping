@@ -20,12 +20,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.27" level="application_server_libraries" />
-    <orderEntry type="library" name="aopalliance" level="project" />
-    <orderEntry type="library" name="spring-aop-4.2.3.RELEASE" level="project" />
-    <orderEntry type="library" name="jsqlparser-0.9.4" level="project" />
-    <orderEntry type="library" name="jackson-annotations-2.4.0" level="project" />
-    <orderEntry type="library" name="log4j-1.2.14" level="project" />
-    <orderEntry type="library" name="commons-beanutils" level="project" />
-    <orderEntry type="library" name="aopalliance (2)" level="project" />
+    <orderEntry type="library" name="commons-fileupload" level="project" />
   </component>
 </module>

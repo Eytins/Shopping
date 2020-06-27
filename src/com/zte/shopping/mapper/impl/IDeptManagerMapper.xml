@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zte.com.zte.shopping.mapper.IDeptManagerMapper">
+
+    <sql id="deptColumn">
+          dept_id,
+          dept_name,
+          dept_no,
+          father_dept_id,
+          remark,
+          create_date,
+          create_staff_id,
+          is_valid
+     </sql>
+    <resultMap type="SysDept" id="deptMapper">
+        <id property="deptId" column="dept_id"/>
+        <result property="deptName" column="dept_name"/>
+        <result property="deptNo" column="dept_no"/>
+        <result property="remark" column="remark"/>
+        <result property="isValid" column="is_valid"/>
+
+        <association property="fatherDept" column="father_dept_id" javaType="SysDept">
+            <id property="deptId" column="father_dept_id"/>
+            <result property="deptName" column="father_dept_name"/>
+        </association>
+    </resultMap>
+    <select id="selectAll" resultMap="deptMapper">
+          select
+              d.dept_id,
+              d.dept_name,
+              d.dept_no,
+              d.remark,
+              d.is_valid,
+              fd.dept_id 'father_dept_id',
+              fd.dept_name 'father_dept_name'
+          from
+              sys_dept d
+          left join
+              sys_dept fd
+          on
+              d.father_dept_id = fd.dept_id
+     </select>
+
+    <select id="selectById" parameterType="integer" resultMap="deptMapper">
+        select
+        <include refid="deptColumn"/>
+        from
+        sys_dept
+        where
+        dept_id = #{id}
+    </select>
+
+    <select id="selectByName" parameterType="string" resultMap="deptMapper">
+        select
+        <include refid="deptColumn"/>
+        from
+        sys_dept
+        where
+        dept_name = #{name}
+    </select>
+
+    <update id="updateDept">
+          update
+              sys_dept
+          set
+              dept_name = #{1},
+              remark = #{2}
+          where
+              dept_id = #{0}
+     </update>
+
+    <select id="selectByIdAndName" resultMap="deptMapper">
+        select
+        <include refid="deptColumn"/>
+        from
+        sys_dept
+        where
+        dept_id = #{0}
+        and
+        dept_name = #{1}
+    </select>
+
+    <insert id="insertDept" parameterType="SysDept">
+           insert into
+                sys_dept(dept_name, dept_no, remark, create_date, create_staff_id, is_valid)
+           values(#{deptName}, #{deptNo}, #{remark}, #{createDate}, #{staff.staffId}, #{isValid})
+     </insert>
+
+    <insert id="insertSonDept" parameterType="SysDept">
+           insert into
+               sys_dept(dept_name, dept_no, remark, create_date, create_staff_id, is_valid, father_dept_id)
+           values(#{deptName}, #{deptNo}, #{remark}, #{createDate}, #{staff.staffId}, #{isValid}, #{fatherDept.deptId})
+     </insert>
+
+    <update id="updateStatus">
+          update
+              sys_dept
+          set
+              is_valid = #{1}
+          where
+              dept_id = #{0}
+     </update>
+</mapper>

@@ -4,7 +4,6 @@ package com.zte.shopping.exception;
  * Created by Eytins
  */
 
-
 public class NoPromissionException extends Exception {
     private static final long serialVersionUID = 1L;
 

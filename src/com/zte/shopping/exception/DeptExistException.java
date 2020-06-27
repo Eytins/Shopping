@@ -4,9 +4,7 @@ package com.zte.shopping.exception;
  * Created by Eytins
  */
 
-
 public class DeptExistException extends Exception {
-
     private static final long serialVersionUID = 1L;
 
     public DeptExistException() {

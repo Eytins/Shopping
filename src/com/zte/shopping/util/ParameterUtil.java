@@ -6,9 +6,6 @@ package com.zte.shopping.util;
 
 public class ParameterUtil {
     public static boolean isnull(String s) {
-        if ("".equals(s) || null == s) {
-            return true;
-        }
-        return false;
+        return "".equals(s) || null == s;
     }
 }

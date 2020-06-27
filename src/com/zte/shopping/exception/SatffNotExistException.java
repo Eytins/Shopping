@@ -5,7 +5,6 @@ package com.zte.shopping.exception;
  */
 
 public class SatffNotExistException extends Exception {
-
     private static final long serialVersionUID = 1L;
 
     public SatffNotExistException() {

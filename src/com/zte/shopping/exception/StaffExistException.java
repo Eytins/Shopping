@@ -5,7 +5,6 @@ package com.zte.shopping.exception;
  */
 
 public class StaffExistException extends Exception {
-
     private static final long serialVersionUID = 1L;
 
     public StaffExistException() {

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zte.com.zte.shopping.mapper.IProductTypeMapper">
+
+    <sql id="typeColumn">
+          id,
+          name,
+          status
+     </sql>
+
+    <select id="findAll" resultType="com.zte.shopping.entity.SysProductType">
+        select
+        <include refid="typeColumn"/>
+        from sys_product_type
+    </select>
+
+    <select id="selectProductTypeByName" resultType="com.zte.shopping.entity.SysProductType">
+        select
+        <include refid="typeColumn"/>
+        from sys_product_type where name = #{name}
+    </select>
+
+    <insert id="insertProductType">
+          insert into sys_product_type(name, status) values(#{name}, #{productTypeStatusEnable})
+     </insert>
+
+    <update id="updateStatus">
+          update sys_product_type set status = #{typeStatus} where id = #{parseInt}
+     </update>
+
+    <select id="selectByName" parameterType="string" resultType="SysProductType">
+        select
+        <include refid="typeColumn"/>
+        from
+        sys_product_type
+        where
+        name = #{name}
+    </select>
+
+    <update id="updateName">
+          update
+               sys_product_type
+          set
+               name = #{name}
+          where
+               id = #{parseInt}
+     </update>
+
+    <select id="selectById" parameterType="integer" resultType="SysProductType">
+        select
+        <include refid="typeColumn"/>
+        from
+        sys_product_type
+        where id = #{parseInt}
+    </select>
+</mapper>
