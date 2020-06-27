@@ -1,6 +1,6 @@
 package com.zte.shopping.mapper;
 
-import com.zte.shopping.entity.SysProductType;
+import com.zte.shopping.entity.ProductType;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -10,17 +10,23 @@ import java.util.List;
  */
 
 public interface IProductTypeMapper {
-    List<SysProductType> findAll();
+    List<ProductType> findAll();
 
-    SysProductType selectProductTypeByName(@Param("name") String name);
+    ProductType selectProductTypeByName(@Param("name") String name);
 
     void insertProductType(@Param("name") String name, @Param("productTypeStatusEnable") int productTypeStatusEnable);
 
     void updateStatus(@Param("parseInt") int parseInt, @Param("typeStatus") int typeStatus);
 
-    SysProductType selectByName(@Param("name") String name);
+    ProductType selectByName(@Param("name") String name);
 
     void updateName(@Param("parseInt") int parseInt, @Param("name") String name);
 
-    SysProductType selectById(@Param("parseInt") int parseInt);
+    ProductType selectById(@Param("parseInt") int parseInt);
+
+    /**
+     * 进入  添加商品页面 后 加载的 商品类型列表数据(已经禁用的商品不能显示在下拉列表中)
+     */
+    List<ProductType> selectByProductTypeStatus(int productTypeStatusEnable);
+
 }

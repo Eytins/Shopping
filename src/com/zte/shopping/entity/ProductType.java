@@ -4,7 +4,7 @@ package com.zte.shopping.entity;
  * Created by Eytins
  */
 
-public class SysProductType {
+public class ProductType {
 
     private long   id;
     private String name;

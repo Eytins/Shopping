@@ -47,6 +47,7 @@ public class StaffController {
         Staff staff = this.iStaffService.staffLogin(userCode, md5.md5Change(password), userRole);
         if (staff != null && Code.equals(session.getAttribute("code"))) {
             session.setAttribute("staff", staff);
+            session.setAttribute("staffName",staff.getStaffName());
             return "backend/admin_main";
         } else {
             return "backend/login";

@@ -46,8 +46,8 @@
             <div class="container head-cc">
                 <p>在线商城后台管理系统</p>
                 <div class="welcome">
-                    <div class="left">欢迎您:</div>
-                    <div class="right"><%=session.getAttribute("staff")%>
+                    <div class="left">欢迎您：</div>
+                    <div class="right"><%=session.getAttribute("staffName")%>
                     </div>
                     <div class="exit" id="exit">退出</div>
                 </div>

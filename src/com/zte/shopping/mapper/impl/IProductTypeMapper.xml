@@ -10,13 +10,13 @@
           status
     </sql>
 
-    <select id="findAll" resultType="com.zte.shopping.entity.SysProductType">
+    <select id="findAll" resultType="com.zte.shopping.entity.ProductType">
         select
         <include refid="typeColumn"/>
         from sys_product_type
     </select>
 
-    <select id="selectProductTypeByName" resultType="com.zte.shopping.entity.SysProductType">
+    <select id="selectProductTypeByName" resultType="com.zte.shopping.entity.ProductType">
         select
         <include refid="typeColumn"/>
         from sys_product_type where name = #{name}
@@ -33,7 +33,7 @@
         where id = #{parseInt}
     </update>
 
-    <select id="selectByName" parameterType="string" resultType="SysProductType">
+    <select id="selectByName" parameterType="string" resultType="ProductType">
         select
         <include refid="typeColumn"/>
         from
@@ -49,11 +49,22 @@
         where id = #{parseInt}
     </update>
 
-    <select id="selectById" parameterType="integer" resultType="SysProductType">
+    <select id="selectById" parameterType="integer" resultType="ProductType">
         select
         <include refid="typeColumn"/>
         from
         sys_product_type
         where id = #{parseInt}
     </select>
+
+    <!-- 查询所有有效的商品类型 -->
+    <select id="selectByProductTypeStatus" parameterType="int" resultType="productType">
+        select
+        <include refid="typeColumn"/>
+        from
+        sys_product_type
+        where
+        status = #{status}
+    </select>
+
 </mapper>

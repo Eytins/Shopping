@@ -20,7 +20,6 @@
         <!-- 要访问的页面  /WEB-INF/jsp/xxx.jsp -->
         <!--  配置要访问页面的前缀   -->
         <property name="prefix" value="/WEB-INF/jsp/"/>
-
         <!-- 配置要访问页面的后缀 -->
         <property name="suffix" value=".jsp"/>
     </bean>
@@ -28,4 +27,9 @@
     <mvc:view-controller path="/login" view-name="backend/login"/>
     <!-- 4. 配置静态资源访问 -->
     <mvc:default-servlet-handler/>
+
+    <!-- 文件上传 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+        <property name="defaultEncoding" value="utf-8" />
+    </bean>
 </beans>

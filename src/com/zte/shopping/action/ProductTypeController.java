@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zte.shopping.constant.DictConstant;
 import com.zte.shopping.constant.ResponseCodeConstant;
-import com.zte.shopping.entity.SysProductType;
+import com.zte.shopping.entity.ProductType;
 import com.zte.shopping.exception.ProductTypeExistException;
 import com.zte.shopping.exception.RequestParameterException;
 import com.zte.shopping.service.IProductTypeService;
@@ -40,9 +40,9 @@ public class ProductTypeController {
         //利用PageHelper设置分页，第一个参数为页码，第二个参数为每页显示数据条数
         PageHelper.startPage(Integer.parseInt(pageNo), Integer.parseInt(pageSize));
         //查询所有数据
-        List<SysProductType> sysProductTypeList = iProductTypeService.findAll();
+        List<ProductType> productTypeList = iProductTypeService.findAll();
 
-        PageInfo<SysProductType> sysProductTypePageInfo = new PageInfo<>(sysProductTypeList);
+        PageInfo<ProductType> sysProductTypePageInfo = new PageInfo<>(productTypeList);
         modelAndView.addObject("sysProductTypePageInfo", sysProductTypePageInfo);
         modelAndView.setViewName("backend/productTypeManager");
         return modelAndView;
@@ -123,7 +123,7 @@ public class ProductTypeController {
     public ResponseResult findById(String id) {
         ResponseResult result = new ResponseResult();
         try {
-            SysProductType type = iProductTypeService.findById(id);
+            ProductType type = iProductTypeService.findById(id);
             //请求成功 ResponseCodeConstant.RESPONSE_CODE_SUCCESS==1
             result.setResponseCode(ResponseCodeConstant.RESPONSE_CODE_SUCCESS);
             result.setReturnObject(type);

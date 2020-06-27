@@ -1,6 +1,6 @@
 package com.zte.shopping.service;
 
-import com.zte.shopping.entity.SysProductType;
+import com.zte.shopping.entity.ProductType;
 import com.zte.shopping.exception.ProductTypeExistException;
 import com.zte.shopping.exception.RequestParameterException;
 
@@ -12,7 +12,7 @@ import java.util.List;
 
 public interface IProductTypeService {
 
-    List<SysProductType> findAll();
+    List<ProductType> findAll();
 
     //添加商品类型，并抛出异常
     void addType(String name) throws RequestParameterException, ProductTypeExistException;
@@ -24,5 +24,10 @@ public interface IProductTypeService {
     void modifyName(String id, String name) throws ProductTypeExistException;
 
     //搜索当前ID下的数据，并可以发出请求错误
-    SysProductType findById(String id) throws RequestParameterException;
+    ProductType findById(String id) throws RequestParameterException;
+
+    /**
+     * 查询所有有效的商品类型
+     */
+    List<ProductType> findEnableProductTypeList();
 }

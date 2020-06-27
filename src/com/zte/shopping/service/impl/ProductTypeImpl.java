@@ -1,7 +1,7 @@
 package com.zte.shopping.service.impl;
 
 import com.zte.shopping.constant.StatusConstant;
-import com.zte.shopping.entity.SysProductType;
+import com.zte.shopping.entity.ProductType;
 import com.zte.shopping.exception.ProductTypeExistException;
 import com.zte.shopping.exception.RequestParameterException;
 import com.zte.shopping.mapper.IProductTypeMapper;
@@ -26,7 +26,7 @@ public class ProductTypeImpl implements IProductTypeService {
     @Override
     //Transactional声明式事务管理 propagation为可选事务的传播行为，readOnly为只读写的选择
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    public List<SysProductType> findAll() {
+    public List<ProductType> findAll() {
         return iProductMapper.findAll();
     }
 
@@ -37,7 +37,7 @@ public class ProductTypeImpl implements IProductTypeService {
             throw new RequestParameterException("商品类型名称不能为空");
         }
 
-        SysProductType selectType = iProductMapper.selectProductTypeByName(name);
+        ProductType selectType = iProductMapper.selectProductTypeByName(name);
         //当已存在时抛出自定义异常
         if (selectType != null) {
             throw new ProductTypeExistException("该商品类型已经存在");
@@ -63,11 +63,11 @@ public class ProductTypeImpl implements IProductTypeService {
     @Override
     public void modifyName(String id, String name) throws ProductTypeExistException {
         //新的类型名称不存在,则可以修改
-        SysProductType sysProductType = iProductMapper.selectByName(name);
+        ProductType productType = iProductMapper.selectByName(name);
 
         // !pt2.getName().equals(name)表示新的类型名称不是原来的,抛出异常
         // pt1 != null 表示DB中不存在该名称,抛出异常
-        if (sysProductType != null) {
+        if (productType != null) {
             throw new ProductTypeExistException("该类型名称已经存在!");
         }
 
@@ -78,13 +78,22 @@ public class ProductTypeImpl implements IProductTypeService {
     @Override
     //Transactional声明式事务管理 propagation为可选事务的传播行为，readOnly为只读写的选择
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    public SysProductType findById(String id) throws RequestParameterException {
-        SysProductType sysProductType;
+    public ProductType findById(String id) throws RequestParameterException {
+        ProductType productType;
         try {
-            sysProductType = iProductMapper.selectById(Integer.parseInt(id));
+            productType = iProductMapper.selectById(Integer.parseInt(id));
         } catch (NumberFormatException e) {
             throw new RequestParameterException("商品类型Id只能是数字");
         }
-        return sysProductType;
+        return productType;
     }
+
+    /**
+     * 进入 添加商品页面  后 加载的 商品类型列表数据(已经禁用的商品不能显示在下拉列表中)
+     */
+    @Override
+    public List<ProductType> findEnableProductTypeList() {
+        return iProductMapper.selectByProductTypeStatus(StatusConstant.PRODUCT_TYPE_STATUS_ENABLE);
+    }
+
 }

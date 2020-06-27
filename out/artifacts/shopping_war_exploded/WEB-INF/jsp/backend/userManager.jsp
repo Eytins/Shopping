@@ -25,7 +25,7 @@
 
     <script type="text/javascript">
         $(function () {
-            //
+
             $("#userName").val("${userParam.userName }");
             $("#loginName").val("${userParam.loginName }");
             $("#phone").val("${userParam.phone }");

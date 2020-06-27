@@ -12,14 +12,14 @@
            image,
            product_type_id
     </sql>
-    <resultMap type="SysProduct" id="productMapper">
+    <resultMap type="Product" id="productMapper">
         <id property="productId" column="product_id"/>
         <result property="productNo" column="product_no"/>
         <result property="name" column="name"/>
         <result property="price" column="price"/>
         <result property="image" column="image"/>
         <!--将SysProductType中的-->
-        <association property="sysProductType" javaType="SysProductType" column="product_type_id">
+        <association property="productType" javaType="ProductType" column="product_type_id">
             <id property="id" column="id"/>
             <result property="name" column="pt.name"/>
             <result property="status" column="status"/>
@@ -42,9 +42,47 @@
                  p.product_type_id = pt.id
     </select>
 
-    <insert id="insertProduct" parameterType="SysProduct">
+    <insert id="insertProduct" parameterType="Product">
         insert into sys_product
             (product_no, name, price, image, product_type_id)
         values (#{productNo}, #{name}, #{price}, #{image}, #{productType.id})
     </insert>
+
+    <delete id="deleteById" parameterType="int">
+        delete
+        from sys_product
+        where product_id = #{id}
+    </delete>
+
+    <select id="selectById" parameterType="int" resultMap="productMapper2">
+        select
+        <include refid="productColumn"/>
+        from
+        sys_product
+        where
+        product_id = #{id}
+    </select>
+
+    <resultMap type="Product" id="productMapper2">
+        <id property="productId" column="product_id"/>
+        <result property="productNo" column="product_no"/>
+        <result property="name" column="name"/>
+        <result property="price" column="price"/>
+        <result property="image" column="image"/>
+
+        <association property="productType" javaType="ProductType" column="product_type_id">
+            <id property="id" column="product_type_id"/>
+        </association>
+    </resultMap>
+
+    <update id="updateProduct" parameterType="Product">
+        update
+            sys_product
+        set name            = #{name},
+            price           = #{price},
+            image           = #{image},
+            product_type_id = #{productType.id}
+        where product_id = #{productId}
+    </update>
+
 </mapper>
