@@ -9,19 +9,19 @@ import java.util.List;
  */
 
 public interface IDeptManagerMapper {
-    public List<SysDept> selectAll();
+    List<SysDept> selectAll();
 
-    public SysDept selectById(int parseInt);
+    SysDept selectById(int parseInt);
 
-    public SysDept selectByName(String name);
+    SysDept selectByName(String name);
 
-    public SysDept selectByIdAndName(int parseInt, String deptName);
+    SysDept selectByIdAndName(int parseInt, String deptName);
 
-    public void updateDept(int parseInt, String deptName, String remark);
+    void updateDept(int parseInt, String deptName, String remark);
 
-    public void insertDept(SysDept dept);
+    void insertDept(SysDept dept);
 
-    public void insertSonDept(SysDept d);
+    void insertSonDept(SysDept d);
 
-    public void updateStatus(int parseInt, Integer status);
+    void updateStatus(int parseInt, Integer status);
 }

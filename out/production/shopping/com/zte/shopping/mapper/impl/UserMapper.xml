@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zte.com.zte.shopping.mapper.IUserMapper">
+<mapper namespace="com.zte.shopping.mapper.IUserMapper">
 
     <select id="dologin" resultType="java.lang.Integer">
         select count(*) from sys_staff where login_name=#{username} and password=#{password} and role=#{userRole}

@@ -235,13 +235,13 @@
     </div>
 </div>
 <!-- 页尾 版权声明 -->
-<div class="containercc">
+<%--<div class="containercc">
     <div class="col-sm-12 foot-css" id="ccc">
         <p class="text-muted credit">
             Copyright © 2017 南京中兴 版权所有
         </p>
     </div>
-</div>
+</div>--%>
 </body>
 <script></script>
 </html>

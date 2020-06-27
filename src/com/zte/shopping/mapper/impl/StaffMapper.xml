@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zte.com.zte.shopping.mapper.IStaffMapper">
+<mapper namespace="com.zte.shopping.mapper.IStaffMapper">
     <sql id="staffColumn">staff_id,staff_name,login_name,password,phone,email,role,is_valid,create_date,create_staff_id,dept_id</sql>
     <select id="staffLogin" resultMap="staffMapper">
         select<include refid="staffColumn"/>from sys_staff where login_name=#{username} and password=#{password} and

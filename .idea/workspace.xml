@@ -1,113 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="shopping:war exploded" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="31b603bf-265a-4c62-8695-706356e27f8c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/action/CodeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/action/DeptManagerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/action/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/action/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/action/ProductTypeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/action/StaffController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/action/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/SysDept.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/SysProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/SysProductType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/SysSequence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/SysStaff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/IDeptManagerMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/IProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/IProductTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/ISequenceMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/IStaffMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/IUserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/IDeptManagerMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/IProductMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/IProductTypeMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/ProductTypeMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/SequenceMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/StaffMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/UserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/IDeptManagerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/DeptManagerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/ProductImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/ProductTypeImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/CreateCodeUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/MD5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/MakeCheckCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/spring.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/springMVC.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/cart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/nmms.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/order.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/编号规则.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/druid-1.1.22.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jsqlparser-1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/jstl-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/log4j-1.2.17.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.0-bin.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-context-support-4.3.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-web-4.3.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-4.3.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-portlet-4.3.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-websocket-4.3.2.RELEASE.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/WEB-INF/lib/standard-1.1.2.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/upload/A.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/upload/B.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/shopping_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/shopping_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/aopalliance.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/aopalliance__2_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/commons_beanutils.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jackson_annotations_2_4_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jsqlparser_0_9_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/log4j_1_2_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/spring_aop_4_2_3_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/create.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/test.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/applicationContext.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/action/CodeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/action/DeptManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/action/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/action/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/action/ProductTypeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/action/StaffController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/action/UserController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/constant/DictConstant.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/constant/ResponseCodeConstant.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/constant/StatusConstant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/controller/AttacheController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/controller/CartController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/controller/CodeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/controller/DeptController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/controller/OrderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/controller/ProductController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/controller/ProductTypeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/controller/StaffController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/IAttacheDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/IDeptDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/IItemDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/IOrderDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/IProductDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/IProductTypeDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/ISequenceDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/IStaffDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/IUserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/mapper/AttacheMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/mapper/DeptMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/mapper/ItemMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/mapper/OrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/mapper/ProductMapper" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/mapper/ProductTypeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/mapper/SequenceMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/mapper/StaffMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/dao/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/Attache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/Dept.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/ProductType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/Sequence.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/Staff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/SysDept.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/SysProduct.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/SysProductType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/SysSequence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/SysStaff.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/entity/User.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/exception/CodeErrorException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/exception/DeptExistException.class" beforeDir="false" />
@@ -121,110 +37,82 @@
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/exception/StaffExistException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/exception/UserExistException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/exception/UserNotLoginException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/IAttacheService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/ICartService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/IDeptService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/IOrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/IDeptManagerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/IProductMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/IProductTypeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/ISequenceMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/IStaffMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/IUserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/impl/IDeptManagerMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/impl/IProductMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/impl/IProductTypeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/impl/ProductTypeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/impl/SequenceMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/impl/StaffMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/mapper/impl/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/IDeptManagerService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/IProductService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/IProductTypeService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/IStaffService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/IUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/impl/AttacheServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/impl/CartServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/impl/DeptServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/impl/OrderServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/impl/ProductServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/impl/ProductTypeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/impl/DeptManagerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/impl/ProductImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/impl/ProductTypeImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/impl/StaffServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/util/CreateCodeUtil.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/util/DataUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/util/MD5Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/util/MD5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/util/MakeCheckCode.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/util/ParameterUtil.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/util/ResponseResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/vo/CartVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/com/zte/shopping/vo/ProductParameterVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/controller-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/dataSource.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/db.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/log4j.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/param/ProductParameter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/aop/aopalliance.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/aop/aspectjrt.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/aop/aspectjweaver.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/aopalliance.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/aspectjrt.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/aspectjweaver.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons-beanutils.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons-collections.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons-dbcp.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/classes/springMVC.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/backend/admin_main.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/backend/deptManager.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/backend/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/backend/productManager.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/backend/productTypeManager.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/backend/staffManager.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/backend/userManager.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/cart.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/center.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/main.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/myOrders.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/nmms.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/order.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/orderDetail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/jsp/编号规则.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons-fileupload.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons-io.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons-lang.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons-logging.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons-pool.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons/commons-beanutils.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons/commons-collections.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons/commons-dbcp.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons/commons-fileupload.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons/commons-io.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons/commons-lang.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons/commons-logging.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/commons/commons-pool.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/else/log4j-1.2.14.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/else/mysql-connector-java-5.1.7-bin.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/druid-1.1.22.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/jackson-annotations-2.4.0.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/jackson-core-2.4.1.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/jackson-databind-2.4.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/jackson/jackson-annotations-2.4.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/jackson/jackson-core-2.4.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/jackson/jackson-databind-2.4.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/jsqlparser-0.9.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/log4j-1.2.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/jsqlparser-1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/jstl-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/log4j-1.2.17.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/mybatis-3.2.8.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/mybatis-spring-1.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/mybatis/jsqlparser-0.9.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/mybatis/mybatis-3.2.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/mybatis/mybatis-spring-1.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/mybatis/pagehelper-4.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.7-bin.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.0-bin.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/pagehelper-4.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-aop-4.2.3.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-aop-4.3.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-aspects-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-beans-4.2.3.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-beans-4.3.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-context-4.2.3.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-context-4.3.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-core-4.2.3.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-core-4.3.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-expression-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-instrument-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-jdbc-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-orm-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-tx-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-web-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-webmvc-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-aop-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-aspects-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-beans-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-context-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-core-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-expression-4.2.3.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-expression-4.3.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-instrument-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-jdbc-4.2.3.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-jdbc-4.3.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-orm-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-tx-4.2.3.RELEASE.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/spring-tx-4.3.2.RELEASE.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-web-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring4/spring-webmvc-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/backend/deptManager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/deptManager.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/backend/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/backend/main.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/backend/productManager.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/backend/productTypeManager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/productTypeManager.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/backend/staffManager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/staffManager.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/backend/userManager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/userManager.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/cart.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/center.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/myOrders.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/order.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/pages/orderDetail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-aop-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-beans-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-context-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-context-support-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-core-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-expression-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-jdbc-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-tx-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-web-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-webmvc-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-webmvc-portlet-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/spring-websocket-4.3.2.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/lib/standard-1.1.2.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/WEB-INF/web.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/bootstarp/css/bootstrap-theme.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/bootstarp/css/bootstrap-theme.css.map" beforeDir="false" />
@@ -291,45 +179,23 @@
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/js/login.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/js/messager.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/js/userSetting.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/applicationContext.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/upload/A.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/shopping_war_exploded/upload/B.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/action/CodeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/action/DeptManagerController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/action/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/action/ProductController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/action/ProductTypeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/action/StaffController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/action/UserController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/constant/DictConstant.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/constant/ResponseCodeConstant.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/constant/StatusConstant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/controller/AttacheController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/controller/CartController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/controller/CodeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/controller/DeptController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/controller/OrderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/controller/ProductController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/controller/ProductTypeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/controller/StaffController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/IAttacheDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/IDeptDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/IItemDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/IOrderDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/IProductDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/IProductTypeDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/ISequenceDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/IStaffDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/IUserDao.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/mapper/AttacheMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/mapper/DeptMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/mapper/ItemMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/mapper/OrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/mapper/ProductMapper" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/mapper/ProductTypeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/mapper/SequenceMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/mapper/StaffMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/dao/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/Attache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/Dept.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/Item.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/Product.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/ProductType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/Sequence.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/Staff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/SysDept.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/SysProduct.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/SysProductType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/SysSequence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/SysStaff.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/entity/User.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/exception/CodeErrorException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/exception/DeptExistException.class" beforeDir="false" />
@@ -343,185 +209,53 @@
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/exception/StaffExistException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/exception/UserExistException.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/exception/UserNotLoginException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/IAttacheService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/ICartService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/IDeptService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/IOrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/IDeptManagerMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/IProductMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/IProductTypeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/ISequenceMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/IStaffMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/IUserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/impl/IDeptManagerMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/impl/IProductMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/impl/IProductTypeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/impl/ProductTypeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/impl/SequenceMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/impl/StaffMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/mapper/impl/UserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/IDeptManagerService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/IProductService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/IProductTypeService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/IStaffService.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/IUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/impl/AttacheServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/impl/CartServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/impl/DeptServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/impl/OrderServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/impl/ProductServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/impl/ProductTypeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/impl/DeptManagerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/impl/ProductImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/impl/ProductTypeImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/impl/StaffServiceImpl.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/util/CreateCodeUtil.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/util/DataUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/util/MD5Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/util/MD5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/util/MakeCheckCode.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/util/ParameterUtil.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/util/ResponseResult.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/vo/CartVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/com/zte/shopping/vo/ProductParameterVo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/controller-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/dataSource.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/db.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/log4j.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/shopping/mybatis-config.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/shopping/param/ProductParameter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/shopping/springMVC.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/shopping.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shopping.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/applicationContext.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/constant/DictConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/constant/DictConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/constant/ResponseCodeConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/constant/ResponseCodeConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/constant/StatusConstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/constant/StatusConstant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/controller/AttacheController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/controller/CartController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/controller/CodeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/controller/DeptController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/controller/OrderController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/controller/ProductController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/controller/ProductTypeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/controller/StaffController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/IAttacheDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/IDeptDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/IItemDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/IOrderDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/IProductDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/IProductTypeDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/ISequenceDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/IStaffDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/IUserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/mapper/AttacheMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/mapper/DeptMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/mapper/ItemMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/mapper/OrderMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/mapper/ProductMapper" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/mapper/ProductTypeMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/mapper/SequenceMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/mapper/StaffMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/dao/mapper/UserMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/entity/Attache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/entity/Dept.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/entity/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/entity/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/entity/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/entity/ProductType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/entity/Sequence.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/entity/Staff.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/exception/CodeErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/CodeErrorException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/exception/DeptExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/DeptExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/exception/LoginNameOrPasswordErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/LoginNameOrPasswordErrorException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/exception/NoPromissionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/NoPromissionException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/exception/PasswordErrorException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/PasswordErrorException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/exception/ProductTypeExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/ProductTypeExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/exception/SatffNotExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/SatffNotExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/exception/StaffExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/StaffExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/exception/UserExistException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/UserExistException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/exception/UserNotLoginException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/exception/UserNotLoginException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/IAttacheService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/ICartService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/IDeptService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/IOrderService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/IProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/IProductTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/IProductTypeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/IStaffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/IStaffService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/AttacheServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/CartServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/DeptServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/OrderServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/ProductServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/ProductTypeServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/StaffServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/StaffServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/util/DataUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/DataUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/util/MD5Util.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/util/ParameterUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/ParameterUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/util/ResponseResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/util/ResponseResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/vo/CartVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/vo/ProductParameterVo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller-servlet.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataSource.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/mapper/IDeptManagerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/IDeptManagerMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/IDeptManagerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/IDeptManagerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/IProductMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/IProductMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/IProductTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/IProductTypeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/ProductTypeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/ProductTypeMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/SequenceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/SequenceMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/StaffMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/StaffMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/mapper/impl/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/zte/shopping/service/IDeptManagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/zte/shopping/service/IDeptManagerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/param/ProductParameter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/aop/aopalliance.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/aop/aspectjrt.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/aop/aspectjweaver.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/aopalliance.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/aspectjrt.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/aspectjweaver.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons-beanutils.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons-collections.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons-dbcp.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons-lang.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons-logging.jar" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/commons-logging.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons-pool.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons/commons-beanutils.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons/commons-collections.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons/commons-dbcp.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons/commons-fileupload.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons/commons-io.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons/commons-lang.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons/commons-logging.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/commons/commons-pool.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/else/log4j-1.2.14.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/else/mysql-connector-java-5.1.7-bin.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/jackson/jackson-annotations-2.4.0.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/jackson/jackson-core-2.4.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/jackson/jackson-databind-2.4.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/jsqlparser-0.9.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/log4j-1.2.14.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/mybatis/jsqlparser-0.9.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/mybatis/mybatis-3.2.8.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/mybatis/mybatis-spring-1.2.2.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/mybatis/pagehelper-4.1.3.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/mysql-connector-java-5.1.7-bin.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-aop-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-aspects-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-beans-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-context-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-core-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-expression-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-instrument-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-jdbc-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-orm-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-tx-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-web-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring-webmvc-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-aop-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-aspects-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-beans-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-context-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-core-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-expression-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-instrument-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-jdbc-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-orm-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-tx-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-web-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/lib/spring4/spring-webmvc-4.2.3.RELEASE.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/backend/deptManager.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/backend/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/backend/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/admin_main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/backend/productManager.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/productManager.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/backend/productTypeManager.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/backend/staffManager.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/backend/userManager.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/cart.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/center.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/center.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/main.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/myOrders.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/myOrders.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/order.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/pages/orderDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/orderDetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/css/nmms.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/css/nmms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/bootstrap-paginator.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/bootstrap-paginator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/js/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/js/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/spring.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/backend/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -530,6 +264,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1dtcvBB3ts0jmEkUHEq4AsgGN7o" />
   <component name="ProjectLevelVcsManager">
@@ -540,18 +281,23 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\JavaProject\A大三下\shopping\web\WEB-INF\lib" />
+      <recent name="E:\JavaProject\A大三下\shopping\src\com\zte\shopping\mapper" />
       <recent name="E:\JavaProject\A大三下\shopping\src" />
       <recent name="E:\JavaProject\A大三下\shopping\web" />
       <recent name="E:\JavaProject\A大三下\shopping\web\WEB-INF" />
@@ -574,6 +320,39 @@
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51074" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -607,7 +386,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593248057607</updated>
-      <workItem from="1593248059531" duration="1230000" />
+      <workItem from="1593248059531" duration="2311000" />
+      <workItem from="1593250794479" duration="752000" />
     </task>
     <servers />
   </component>
@@ -615,9 +395,73 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="505" y="131" key="SettingsEditor" timestamp="1593249304867">
+    <state x="505" y="131" key="#Project_Structure" timestamp="1593249949148">
       <screen x="0" y="0" width="2048" height="1112" />
     </state>
-    <state x="505" y="131" key="SettingsEditor/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593249304867" />
+    <state x="505" y="131" key="#Project_Structure/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593249949148" />
+    <state x="617" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593250543708">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="617" y="215" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593250543708" />
+    <state x="767" y="409" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1593251047670">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="767" y="409" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251047670" />
+    <state width="1382" height="338" key="GridCell.Tab.0.bottom" timestamp="1593251546880">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.0.bottom/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546880" />
+    <state width="1382" height="338" key="GridCell.Tab.0.center" timestamp="1593251546880">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.0.center/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546880" />
+    <state width="1382" height="338" key="GridCell.Tab.0.left" timestamp="1593251546879">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.0.left/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546879" />
+    <state width="1382" height="338" key="GridCell.Tab.0.right" timestamp="1593251546880">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.0.right/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546880" />
+    <state width="1382" height="338" key="GridCell.Tab.1.bottom" timestamp="1593251546880">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.1.bottom/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546880" />
+    <state width="1382" height="338" key="GridCell.Tab.1.center" timestamp="1593251546880">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.1.center/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546880" />
+    <state width="1382" height="338" key="GridCell.Tab.1.left" timestamp="1593251546880">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.1.left/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546880" />
+    <state width="1382" height="338" key="GridCell.Tab.1.right" timestamp="1593251546880">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.1.right/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546880" />
+    <state width="1382" height="338" key="GridCell.Tab.2.bottom" timestamp="1593251546880">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.2.bottom/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546880" />
+    <state width="1382" height="338" key="GridCell.Tab.2.center" timestamp="1593251546880">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.2.center/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546880" />
+    <state width="1382" height="338" key="GridCell.Tab.2.left" timestamp="1593251546880">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.2.left/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546880" />
+    <state width="1382" height="338" key="GridCell.Tab.2.right" timestamp="1593251546880">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="1382" height="338" key="GridCell.Tab.2.right/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593251546880" />
+    <state width="212" height="477" key="HiddenNamespacesPopup" timestamp="1593249842782">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state width="212" height="477" key="HiddenNamespacesPopup/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593249842782" />
+    <state x="505" y="131" key="SettingsEditor" timestamp="1593250968385">
+      <screen x="0" y="0" width="2048" height="1112" />
+    </state>
+    <state x="505" y="131" key="SettingsEditor/2560.370.1280.687/0.0.2048.1112@0.0.2048.1112" timestamp="1593250968385" />
   </component>
 </project>

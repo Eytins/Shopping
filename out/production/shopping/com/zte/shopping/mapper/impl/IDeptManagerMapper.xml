@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zte.com.zte.shopping.mapper.IDeptManagerMapper">
+<mapper namespace="com.zte.shopping.mapper.IDeptManagerMapper">
 
     <sql id="deptColumn">
           dept_id,
@@ -26,6 +26,7 @@
             <result property="deptName" column="father_dept_name"/>
         </association>
     </resultMap>
+
     <select id="selectAll" resultMap="deptMapper">
           select
               d.dept_id,
