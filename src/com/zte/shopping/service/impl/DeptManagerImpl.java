@@ -2,9 +2,9 @@ package com.zte.shopping.service.impl;
 
 import com.zte.shopping.constant.DictConstant;
 import com.zte.shopping.constant.StatusConstant;
-import com.zte.shopping.entity.SysDept;
+import com.zte.shopping.entity.Dept;
 import com.zte.shopping.entity.SysSequence;
-import com.zte.shopping.entity.SysStaff;
+import com.zte.shopping.entity.Staff;
 import com.zte.shopping.exception.DeptExistException;
 import com.zte.shopping.exception.LoginDisabledException;
 import com.zte.shopping.exception.RequestParameterException;
@@ -35,12 +35,12 @@ public class DeptManagerImpl implements IDeptManagerService {
     private ISequenceMapper iSequenceMapper;
 
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
-    public List<SysDept> findAll() {
+    public List<Dept> findAll() {
         return iDeptManagerMapper.selectAll();
     }
 
     @Override
-    public SysDept findById(String id) throws RequestParameterException {
+    public Dept findById(String id) throws RequestParameterException {
         if (ParameterUtil.isnull(id)) {
             throw new RequestParameterException("部门id不能为空");
         }
@@ -49,7 +49,7 @@ public class DeptManagerImpl implements IDeptManagerService {
     }
 
     public void modifyDept(String redeptName, String deptId, String deptName, String remark) throws DeptExistException {
-        SysDept dept = iDeptManagerMapper.selectByIdAndName(Integer.parseInt(deptId), deptName);
+        Dept dept = iDeptManagerMapper.selectByIdAndName(Integer.parseInt(deptId), deptName);
 
         if (dept != null && !dept.getDeptName().equals(redeptName)) {
             throw new DeptExistException("该部门名称已经存在!");
@@ -61,18 +61,18 @@ public class DeptManagerImpl implements IDeptManagerService {
 
     @Override
     public void addDept(String deptName, String remark, HttpSession session) throws DeptExistException, LoginDisabledException {
-        SysDept dept = iDeptManagerMapper.selectByName(deptName);
+        Dept dept = iDeptManagerMapper.selectByName(deptName);
 
         if (dept != null) {
             throw new DeptExistException("该部门已经存在!");
         }
 
-        SysStaff staff = (SysStaff) session.getAttribute("staff");
+        Staff staff = (Staff) session.getAttribute("staff");
         if (staff == null) {
             throw new LoginDisabledException("登录失效, 请重新登录");
         }
 
-        SysDept sysDept = new SysDept();
+        Dept sysDept = new Dept();
         sysDept.setCreateDate(new Date());
         sysDept.setDeptName(deptName);
         // 部门状态为有效,值为1
@@ -113,18 +113,18 @@ public class DeptManagerImpl implements IDeptManagerService {
 
     public void addSonDept(String fatherDeptId, String deptName, String remark, HttpSession session) throws DeptExistException, LoginDisabledException {
 
-        SysDept dept = iDeptManagerMapper.selectByName(deptName);
+        Dept dept = iDeptManagerMapper.selectByName(deptName);
 
         if (dept != null) {
             throw new DeptExistException("该部门已经存在!");
         }
 
-        SysStaff staff = (SysStaff) session.getAttribute("staff");
+        Staff staff = (Staff) session.getAttribute("staff");
         if (staff == null) {
             throw new LoginDisabledException("登录失效, 请重新登录");
         }
 
-        SysDept sysDept = new SysDept();
+        Dept sysDept = new Dept();
         sysDept.setCreateDate(new Date());
         sysDept.setDeptName(deptName);
         // 部门状态为有效,值为1
@@ -134,7 +134,7 @@ public class DeptManagerImpl implements IDeptManagerService {
 
 
         // 和添加父部门时不同  start
-        SysDept fatherDept = new SysDept();
+        Dept fatherDept = new Dept();
         fatherDept.setDeptId(Integer.parseInt(fatherDeptId));
         sysDept.setFatherDept(fatherDept);
         // 和添加父部门时不同  end
@@ -193,5 +193,13 @@ public class DeptManagerImpl implements IDeptManagerService {
 
         // 子部门的 启用/禁用
         iDeptManagerMapper.updateStatus(Integer.parseInt(deptId), status);
+    }
+
+    /**
+     * 查询出所有 有效的部门信息列表
+     */
+    @Override
+    public List<Dept> findEnabledDeptList() {
+        return iDeptManagerMapper.selectEnabledDeptList(StatusConstant.DEPT_STATUS_ENABLE);
     }
 }

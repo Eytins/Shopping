@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.zte.shopping.constant.DictConstant;
 import com.zte.shopping.constant.ResponseCodeConstant;
-import com.zte.shopping.entity.SysDept;
+import com.zte.shopping.entity.Dept;
 import com.zte.shopping.exception.DeptExistException;
 import com.zte.shopping.exception.LoginDisabledException;
 import com.zte.shopping.exception.RequestParameterException;
@@ -46,9 +46,9 @@ public class DeptManagerController {
 
         PageHelper.startPage(Integer.parseInt(pageNo), Integer.parseInt(pageSize));
 
-        List<SysDept> deptList = iDeptManagerService.findAll();
+        List<Dept> deptList = iDeptManagerService.findAll();
 
-        PageInfo<SysDept> sysDeptPageInfo = new PageInfo<SysDept>(deptList);
+        PageInfo<Dept> sysDeptPageInfo = new PageInfo<Dept>(deptList);
 
         modelAndView.addObject("sysDeptPageInfo", sysDeptPageInfo);
 
@@ -63,12 +63,12 @@ public class DeptManagerController {
         ResponseResult result = new ResponseResult();
 
         try {
-            SysDept sysDept = iDeptManagerService.findById(id);
+            Dept dept = iDeptManagerService.findById(id);
 
             result.setMessage("成功");
             result.setResponseCode(ResponseCodeConstant.RESPONSE_CODE_SUCCESS);
 
-            result.setReturnObject(sysDept);
+            result.setReturnObject(dept);
 
         } catch (RequestParameterException e) {
             result.setMessage(e.getMessage());

@@ -1,6 +1,6 @@
 package com.zte.shopping.service;
 
-import com.zte.shopping.entity.SysDept;
+import com.zte.shopping.entity.Dept;
 import com.zte.shopping.exception.DeptExistException;
 import com.zte.shopping.exception.LoginDisabledException;
 import com.zte.shopping.exception.RequestParameterException;
@@ -14,9 +14,9 @@ import java.util.List;
 
 public interface IDeptManagerService {
 
-    List<SysDept> findAll();
+    List<Dept> findAll();
 
-    SysDept findById(String id) throws RequestParameterException;
+    Dept findById(String id) throws RequestParameterException;
 
     void modifyDept(String redeptName, String deptId, String deptName, String remark) throws DeptExistException;
 
@@ -25,4 +25,10 @@ public interface IDeptManagerService {
     void addSonDept(String fatherDeptId, String deptName, String remark, HttpSession session) throws DeptExistException, LoginDisabledException;
 
     void modifyStatus(String deptId, String isValid) throws RequestParameterException;
+
+    /**
+     * 查询有效的部门信息
+     */
+    List<Dept> findEnabledDeptList();
+
 }

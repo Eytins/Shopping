@@ -1,6 +1,6 @@
 package com.zte.shopping.mapper;
 
-import com.zte.shopping.entity.SysDept;
+import com.zte.shopping.entity.Dept;
 
 import java.util.List;
 
@@ -9,19 +9,25 @@ import java.util.List;
  */
 
 public interface IDeptManagerMapper {
-    List<SysDept> selectAll();
+    List<Dept> selectAll();
 
-    SysDept selectById(int parseInt);
+    Dept selectById(int parseInt);
 
-    SysDept selectByName(String name);
+    Dept selectByName(String name);
 
-    SysDept selectByIdAndName(int parseInt, String deptName);
+    Dept selectByIdAndName(int parseInt, String deptName);
 
     void updateDept(int parseInt, String deptName, String remark);
 
-    void insertDept(SysDept dept);
+    void insertDept(Dept dept);
 
-    void insertSonDept(SysDept d);
+    void insertSonDept(Dept d);
 
     void updateStatus(int parseInt, Integer status);
+
+    /**
+     * 根据状态查询出管理员的信息列表
+     */
+    List<Dept> selectEnabledDeptList(int deptStatusEnable);
+
 }

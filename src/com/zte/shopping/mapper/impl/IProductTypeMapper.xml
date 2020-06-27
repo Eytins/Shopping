@@ -5,10 +5,10 @@
 <mapper namespace="com.zte.shopping.mapper.IProductTypeMapper">
 
     <sql id="typeColumn">
-          id,
+        id,
           name,
           status
-     </sql>
+    </sql>
 
     <select id="findAll" resultType="com.zte.shopping.entity.SysProductType">
         select
@@ -23,12 +23,15 @@
     </select>
 
     <insert id="insertProductType">
-          insert into sys_product_type(name, status) values(#{name}, #{productTypeStatusEnable})
-     </insert>
+        insert into sys_product_type(name, status)
+        values (#{name}, #{productTypeStatusEnable})
+    </insert>
 
     <update id="updateStatus">
-          update sys_product_type set status = #{typeStatus} where id = #{parseInt}
-     </update>
+        update sys_product_type
+        set status = #{typeStatus}
+        where id = #{parseInt}
+    </update>
 
     <select id="selectByName" parameterType="string" resultType="SysProductType">
         select
@@ -40,13 +43,11 @@
     </select>
 
     <update id="updateName">
-          update
-               sys_product_type
-          set
-               name = #{name}
-          where
-               id = #{parseInt}
-     </update>
+        update
+            sys_product_type
+        set name = #{name}
+        where id = #{parseInt}
+    </update>
 
     <select id="selectById" parameterType="integer" resultType="SysProductType">
         select

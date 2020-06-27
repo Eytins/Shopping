@@ -7,18 +7,18 @@ import java.util.Date;
  * Created by Eytins
  */
 
-public class SysDept {
+public class Dept {
 
-    private Integer  deptId;
-    private String   deptName;
-    private String   deptNo;
-    private long     fatherDeptId;
-    private String   remark;
-    private Date     createDate;
-    private long     createStaffId;
-    private long     isValid;
-    private SysDept  fatherDept;
-    private SysStaff staff;
+    private Integer deptId;
+    private String  deptName;
+    private String  deptNo;
+    private long    fatherDeptId;
+    private String  remark;
+    private Date    createDate;
+    private long    createStaffId;
+    private long    isValid;
+    private Dept    fatherDept;
+    private Staff   staff;
 
     public Integer getDeptId() {
         return deptId;
@@ -91,19 +91,19 @@ public class SysDept {
         this.isValid = isValid;
     }
 
-    public SysDept getFatherDept() {
+    public Dept getFatherDept() {
         return fatherDept;
     }
 
-    public void setFatherDept(SysDept fatherDept) {
+    public void setFatherDept(Dept fatherDept) {
         this.fatherDept = fatherDept;
     }
 
-    public void setStaff(SysStaff staff) {
+    public void setStaff(Staff staff) {
         this.staff = staff;
     }
 
-    public SysStaff getStaff() {
+    public Staff getStaff() {
         return staff;
     }
 }

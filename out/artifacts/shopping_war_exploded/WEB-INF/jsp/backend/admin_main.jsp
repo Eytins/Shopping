@@ -17,16 +17,16 @@
         $(function () {
             // 点击切换页面
             $("#user-set").click(function () {
-                $("#frame-id").attr("src", "${pageContext.request.contextPath }/skip/userManager");
+                $("#frame-id").attr("src", "${pageContext.request.contextPath }/user/findByFuzzyParamList");
             });
             $("#product-set").click(function () {
                 $("#frame-id").attr("src", "${pageContext.request.contextPath }/product/findAll");
             });
             $("#product-type-set").click(function () {
-                $("#frame-id").attr("src", "${pageContext.request.contextPath}/productType/findAll");
+                $("#frame-id").attr("src", "${pageContext.request.contextPath }/productType/findAll");
             });
             $("#manager-set").click(function () {
-                $("#frame-id").attr("src", "${pageContext.request.contextPath }/skip/staffManager");
+                $("#frame-id").attr("src", "${pageContext.request.contextPath }/staff/findFuzzyByParamList");
             });
             $("#dept-set").click(function () {
                 $("#frame-id").attr("src", "${pageContext.request.contextPath }/dept/findAll");
@@ -65,7 +65,6 @@
                         <li class="list-group-item" name="userPic" id="product-set">
                             <i class="glyphicon glyphicon-facetime-video"></i> &nbsp;商品管理
                         </li>
-
                         <li class="list-group-item" name="departmentSet" id="dept-set">
                             <i class="glyphicon glyphicon-modal-window"></i> &nbsp;部门管理
                         </li>
@@ -80,7 +79,7 @@
                 <div class="col-xs-9" id="userPanel">
                     <iframe id="frame-id" src="${pageContext.request.contextPath}/productType/findAll" width="100%"
                             height="100%"
-                            frameborder="0" scrolling="no">
+                            frameborder="0" scrolling="no"></iframe>
                 </div>
 
             </div>

@@ -5,7 +5,7 @@
 <mapper namespace="com.zte.shopping.mapper.IDeptManagerMapper">
 
     <sql id="deptColumn">
-          dept_id,
+        dept_id,
           dept_name,
           dept_no,
           father_dept_id,
@@ -13,36 +13,34 @@
           create_date,
           create_staff_id,
           is_valid
-     </sql>
-    <resultMap type="SysDept" id="deptMapper">
+    </sql>
+    <resultMap type="Dept" id="deptMapper">
         <id property="deptId" column="dept_id"/>
         <result property="deptName" column="dept_name"/>
         <result property="deptNo" column="dept_no"/>
         <result property="remark" column="remark"/>
         <result property="isValid" column="is_valid"/>
 
-        <association property="fatherDept" column="father_dept_id" javaType="SysDept">
+        <association property="fatherDept" column="father_dept_id" javaType="Dept">
             <id property="deptId" column="father_dept_id"/>
             <result property="deptName" column="father_dept_name"/>
         </association>
     </resultMap>
 
     <select id="selectAll" resultMap="deptMapper">
-          select
-              d.dept_id,
-              d.dept_name,
-              d.dept_no,
-              d.remark,
-              d.is_valid,
-              fd.dept_id 'father_dept_id',
-              fd.dept_name 'father_dept_name'
-          from
-              sys_dept d
-          left join
-              sys_dept fd
-          on
-              d.father_dept_id = fd.dept_id
-     </select>
+        select d.dept_id,
+               d.dept_name,
+               d.dept_no,
+               d.remark,
+               d.is_valid,
+               fd.dept_id   'father_dept_id',
+               fd.dept_name 'father_dept_name'
+        from sys_dept d
+                 left join
+             sys_dept fd
+             on
+                 d.father_dept_id = fd.dept_id
+    </select>
 
     <select id="selectById" parameterType="integer" resultMap="deptMapper">
         select
@@ -63,14 +61,12 @@
     </select>
 
     <update id="updateDept">
-          update
-              sys_dept
-          set
-              dept_name = #{1},
-              remark = #{2}
-          where
-              dept_id = #{0}
-     </update>
+        update
+            sys_dept
+        set dept_name = #{1},
+            remark    = #{2}
+        where dept_id = #{0}
+    </update>
 
     <select id="selectByIdAndName" resultMap="deptMapper">
         select
@@ -83,24 +79,30 @@
         dept_name = #{1}
     </select>
 
-    <insert id="insertDept" parameterType="SysDept">
-           insert into
-                sys_dept(dept_name, dept_no, remark, create_date, create_staff_id, is_valid)
-           values(#{deptName}, #{deptNo}, #{remark}, #{createDate}, #{staff.staffId}, #{isValid})
-     </insert>
+    <insert id="insertDept" parameterType="Dept">
+        insert into sys_dept(dept_name, dept_no, remark, create_date, create_staff_id, is_valid)
+        values (#{deptName}, #{deptNo}, #{remark}, #{createDate}, #{staff.staffId}, #{isValid})
+    </insert>
 
-    <insert id="insertSonDept" parameterType="SysDept">
-           insert into
-               sys_dept(dept_name, dept_no, remark, create_date, create_staff_id, is_valid, father_dept_id)
-           values(#{deptName}, #{deptNo}, #{remark}, #{createDate}, #{staff.staffId}, #{isValid}, #{fatherDept.deptId})
-     </insert>
+    <insert id="insertSonDept" parameterType="Dept">
+        insert into sys_dept(dept_name, dept_no, remark, create_date, create_staff_id, is_valid, father_dept_id)
+        values (#{deptName}, #{deptNo}, #{remark}, #{createDate}, #{staff.staffId}, #{isValid}, #{fatherDept.deptId})
+    </insert>
 
     <update id="updateStatus">
-          update
-              sys_dept
-          set
-              is_valid = #{1}
-          where
-              dept_id = #{0}
-     </update>
+        update
+            sys_dept
+        set is_valid = #{1}
+        where dept_id = #{0}
+    </update>
+
+    <!--   管理员管理页面: 点击 添加管理员   时 加载 有效的部门信息列表 -->
+    <select id="selectEnabledDeptList" parameterType="integer" resultMap="deptMapper">
+        select
+        <include refid="deptColumn"/>
+        from
+        sys_dept
+        where
+        is_valid = #{isValid}
+    </select>
 </mapper>

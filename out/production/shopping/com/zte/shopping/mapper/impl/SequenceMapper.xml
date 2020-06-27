@@ -5,10 +5,10 @@
 <mapper namespace="com.zte.shopping.mapper.ISequenceMapper">
 
     <sql id="sequenceColumn">
-           id,
+        id,
            name,
            value
-      </sql>
+    </sql>
 
     <select id="selectByName" parameterType="string" resultType="SysSequence">
         select
@@ -19,17 +19,14 @@
     </select>
 
     <insert id="insertSequence" parameterType="SysSequence">
-           insert into
-                sys_sequence(name, value)
-           values(#{name}, #{value})
-      </insert>
+        insert into sys_sequence(name, value)
+        values (#{name}, #{value})
+    </insert>
 
     <update id="updateSequenceValue">
-           update
-               sys_sequence
-           set
-               value = #{1}
-           where
-               name = #{0}
-      </update>
+        update
+            sys_sequence
+        set value = #{1}
+        where name = #{0}
+    </update>
 </mapper>

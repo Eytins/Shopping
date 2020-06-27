@@ -5,13 +5,13 @@
 <mapper namespace="com.zte.shopping.mapper.IProductMapper">
 
     <sql id="productColumn">
-           product_id,
+        product_id,
            product_no,
            name,
            price,
            image,
            product_type_id
-      </sql>
+    </sql>
     <resultMap type="SysProduct" id="productMapper">
         <id property="productId" column="product_id"/>
         <result property="productNo" column="product_no"/>
@@ -28,27 +28,23 @@
 
 
     <select id="selectAll" resultMap="productMapper">
-           select
-               p.product_id,
+        select p.product_id,
                p.product_no,
                p.name,
                p.price,
                pt.id,
                pt.name 'pt.name',
                pt.status
-          from
-               sys_product p
-          left join
-               sys_product_type pt
-          on
-               p.product_type_id = pt.id
-      </select>
+        from sys_product p
+                 left join
+             sys_product_type pt
+             on
+                 p.product_type_id = pt.id
+    </select>
 
     <insert id="insertProduct" parameterType="SysProduct">
-           insert into
-               sys_product
-                  (product_no, name, price, image, product_type_id)
-           values
-                  (#{productNo}, #{name}, #{price}, #{image}, #{productType.id})
-      </insert>
+        insert into sys_product
+            (product_no, name, price, image, product_type_id)
+        values (#{productNo}, #{name}, #{price}, #{image}, #{productType.id})
+    </insert>
 </mapper>

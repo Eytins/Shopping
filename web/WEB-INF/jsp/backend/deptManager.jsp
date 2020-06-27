@@ -365,12 +365,12 @@
                                    name="doModifyDept" data-id="${dept.deptId }">
 
                             <c:if test="${dept.isValid eq 0 }">
-                                <input type="button" class="btn btn-danger btn-sm doDisable" value="启用"
+                                <input type="button" class="btn btn-success btn-sm doDisable" value="启用"
                                        name="modifyStatus" data-id="${dept.deptId }" data-status="${dept.isValid }"/>
                             </c:if>
 
                             <c:if test="${dept.isValid eq 1 }">
-                                <input type="button" class="btn btn-success btn-sm doDisable" value="禁用"
+                                <input type="button" class="btn btn-danger btn-sm doDisable" value="禁用"
                                        name="modifyStatus" name="modifyStatus" data-id="${dept.deptId }"
                                        data-status="${dept.isValid }"/>
                             </c:if>
