@@ -28,7 +28,6 @@ public class Dept {
         this.deptId = deptId;
     }
 
-
     public String getDeptName() {
         return deptName;
     }
@@ -36,7 +35,6 @@ public class Dept {
     public void setDeptName(String deptName) {
         this.deptName = deptName;
     }
-
 
     public String getDeptNo() {
         return deptNo;
@@ -46,7 +44,6 @@ public class Dept {
         this.deptNo = deptNo;
     }
 
-
     public long getFatherDeptId() {
         return fatherDeptId;
     }
@@ -54,7 +51,6 @@ public class Dept {
     public void setFatherDeptId(long fatherDeptId) {
         this.fatherDeptId = fatherDeptId;
     }
-
 
     public String getRemark() {
         return remark;
@@ -64,7 +60,6 @@ public class Dept {
         this.remark = remark;
     }
 
-
     public Date getCreateDate() {
         return createDate;
     }
@@ -73,7 +68,6 @@ public class Dept {
         this.createDate = createDate;
     }
 
-
     public long getCreateStaffId() {
         return createStaffId;
     }
@@ -81,7 +75,6 @@ public class Dept {
     public void setCreateStaffId(long createStaffId) {
         this.createStaffId = createStaffId;
     }
-
 
     public long getIsValid() {
         return isValid;

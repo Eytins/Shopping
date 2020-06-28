@@ -8,40 +8,18 @@ import java.util.Date;
 
 public class Staff {
 
-    private static final long serialVersionUID = 1L;
-
-    // 后台员工ID
-    private Integer staffId;
-
-    // 后台员工的姓名
-    private String staffName;
-
-    // 账号
-    private String loginName;
-
-    // 密码
-    private String password;
-
-    // 手机号
-    private String phone;
-
-    // 邮箱
-    private String email;
-
-    // 部门
-    private Dept dept;
-
-    // 角色
-    private String role;
-
-    // 是否有效
-    private Integer isValid;
-
-    // 创建时间
-    private Date createDate;
-
-    // 创建员工
-    private Staff createStaff;
+    private static final long    serialVersionUID = 1L;
+    private              Integer staffId;
+    private              String  staffName;
+    private              String  loginName;
+    private              String  password;
+    private              String  phone;
+    private              String  email;
+    private              Dept    dept;
+    private              String  role;
+    private              Integer isValid;
+    private              Date    createDate;
+    private              Staff   createStaff;
 
     public Staff() {
         super();

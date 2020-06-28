@@ -195,9 +195,6 @@ public class DeptManagerImpl implements IDeptManagerService {
         iDeptManagerMapper.updateStatus(Integer.parseInt(deptId), status);
     }
 
-    /**
-     * 查询出所有 有效的部门信息列表
-     */
     @Override
     public List<Dept> findEnabledDeptList() {
         return iDeptManagerMapper.selectEnabledDeptList(StatusConstant.DEPT_STATUS_ENABLE);

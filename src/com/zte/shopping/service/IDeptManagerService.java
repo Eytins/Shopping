@@ -26,9 +26,6 @@ public interface IDeptManagerService {
 
     void modifyStatus(String deptId, String isValid) throws RequestParameterException;
 
-    /**
-     * 查询有效的部门信息
-     */
     List<Dept> findEnabledDeptList();
 
 }

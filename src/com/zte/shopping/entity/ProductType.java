@@ -10,7 +10,6 @@ public class ProductType {
     private String name;
     private long   status;
 
-
     public long getId() {
         return id;
     }
@@ -19,7 +18,6 @@ public class ProductType {
         this.id = id;
     }
 
-
     public String getName() {
         return name;
     }
@@ -27,7 +25,6 @@ public class ProductType {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public long getStatus() {
         return status;

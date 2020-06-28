@@ -34,11 +34,6 @@ public class UserController {
         return "main";
     }
 
-    /**
-     * 会员组合条件查询(动态查询)
-     * 根据前台页面所传递的参数选择合适的条件进行查询
-     * 支持模糊查询
-     */
     @RequestMapping("/findByFuzzyParamList")
     public ModelAndView findByFuzzyParamList(String pageNo, String pageSize, User userParam) {
         ModelAndView modelAndView = new ModelAndView();
@@ -67,10 +62,6 @@ public class UserController {
         return modelAndView;
     }
 
-    /**
-     * 启用/禁用
-     * 根据 会员id  修改对应  会员的状态
-     */
     @ResponseBody
     @RequestMapping("/modifyStatus")
     public ResponseResult modifyStatus(String id, String status) {
@@ -94,9 +85,6 @@ public class UserController {
         return result;
     }
 
-    /**
-     * 修改会员信息页面的默认值
-     */
     @ResponseBody
     @RequestMapping("/findById")
     public ResponseResult findById(String id) {
@@ -121,11 +109,6 @@ public class UserController {
         return result;
     }
 
-    /**
-     * 根据  会员id  修改会员信息
-     * <p>
-     * 账号不能重复
-     */
     @ResponseBody
     @RequestMapping("/modifyById")
     public ResponseResult modifyById(User user) {

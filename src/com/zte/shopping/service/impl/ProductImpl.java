@@ -71,9 +71,6 @@ public class ProductImpl implements IProductService {
         }
     }
 
-    /**
-     * 根据 id 删除商品信息
-     */
     public void removeById(String id) {
         iProductMapper.deleteById(Integer.parseInt(id));
     }
@@ -83,9 +80,6 @@ public class ProductImpl implements IProductService {
         return iProductMapper.selectById(Integer.parseInt(id));
     }
 
-    /**
-     * 修改商品信息
-     */
     @Override
     public void modifyProduct(CommonsMultipartFile file, String productId,
                               String name, String price, String typeId, HttpSession session) throws FileUploadException {

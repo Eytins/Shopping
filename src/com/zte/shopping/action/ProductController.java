@@ -33,10 +33,6 @@ public class ProductController {
     @Autowired
     private IProductTypeService iProductTypeService;
 
-
-    /**
-     * 查询商品信息列表
-     */
     @RequestMapping("/findAll")
     public ModelAndView findAll(String pageNo, String pageSize) {
         ModelAndView modelAndView = new ModelAndView();
@@ -67,10 +63,6 @@ public class ProductController {
         return modelAndView;
     }
 
-    /**
-     * 添加商品信息
-     * 文件上传操作
-     */
     @RequestMapping(value = "/addProduct", method = {RequestMethod.GET, RequestMethod.POST})
     public ModelAndView addProduct(
             @RequestParam("file") CommonsMultipartFile file,
@@ -92,29 +84,20 @@ public class ProductController {
         return modelAndView;
     }
 
-    /**
-     * 进入添加商品页面后加载的商品类型列表数据(已经禁用的商品不能显示在下拉列表中)
-     */
+    //进入添加商品页面后加载的商品类型列表数据(已经禁用的商品不能显示在下拉列表中)
     @ModelAttribute("typeList")
     public List<ProductType> loadTypeList() {
         // 查询所有有效的商品类型
         return iProductTypeService.findEnableProductTypeList();
     }
 
-    /**
-     * @param id
-     * @param pageNo
-     * @return
-     */
     @RequestMapping("/removeById")
     public String removeById(String id, String pageNo) {
         iProductService.removeById(id);
         return "redirect:findAll?pageNo=" + pageNo;
     }
 
-    /**
-     * 跳到商品修改页面
-     */
+    //跳到商品修改页面
     @ResponseBody
     @RequestMapping("/findById")
     public ResponseResult findById(String id) {
@@ -130,9 +113,7 @@ public class ProductController {
         return result;
     }
 
-    /**
-     * 商品修改操作
-     */
+    //商品修改操作
     @RequestMapping("/modifyProduct")
     public ModelAndView modifyProduct(
             @RequestParam("file") CommonsMultipartFile file,

@@ -9,30 +9,15 @@ import java.util.Date;
 
 public class User implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
-    private Integer userId;
-
-    // 姓名
-    private String userName;
-
-    // 帐号
-    private String loginName;
-
-    // 密码
-    private String password;
-
-    // 电话
-    private String phone;
-
-    // 地址
-    private String address;
-
-    // 状态
-    private Integer isValid;
-
-    // 会员注册时间
-    private Date registDate;
+    private static final long    serialVersionUID = 1L;
+    private              Integer userId;
+    private              String  userName;
+    private              String  loginName;
+    private              String  password;
+    private              String  phone;
+    private              String  address;
+    private              Integer isValid;
+    private              Date    registDate;
 
     public User() {
         super();

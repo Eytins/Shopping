@@ -13,9 +13,7 @@ import java.util.Random;
  */
 
 public class CreateCodeUtil {
-    /**
-     * 生成4位的随机数(数字和字母组合)
-     */
+    //生成4位的随机数(数字和字母组合)
     public static StringBuffer createCode(Random random) {
         String       s    = "1234567890qwertyuiopasdfghjklzxcvbnm";
         StringBuffer code = new StringBuffer();
@@ -27,9 +25,7 @@ public class CreateCodeUtil {
         return code;
     }
 
-    /**
-     * 生成4位的纯数字验证码
-     */
+    //生成4位的纯数字验证码
     public static StringBuffer createCodeNum(Random random) {
         String       s    = "1234567890";
         StringBuffer code = new StringBuffer();
@@ -42,9 +38,7 @@ public class CreateCodeUtil {
     }
 
 
-    /**
-     * 生成 成语验证码
-     */
+    //生成 成语验证码
     public static String createCodeIdiom(Random random) throws IOException {
         String            randomStr = "";
         ArrayList<String> al        = new ArrayList<String>();
