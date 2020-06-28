@@ -34,6 +34,7 @@
                 };
             //初始化分页插件，并获取当前页码
             $("#productTypePage").bootstrapPaginator(options);
+
             $("#addProductType").click(function () {
                 $.ajax(
                     {
@@ -123,6 +124,33 @@
                     });
 
             });
+
+            $("#doExportProType").click(function () {
+                $.ajax(
+                    {
+                        type: "post",
+                        url: "${pageContext.request.contextPath }/productType/exportExcel",
+                        data: {"name": $("#productTypeName").val()},//模态框中数据ID作为取值ID
+                        dataType: "json",
+                        success: function (result) {
+                            if (result.responseCode === 1) {
+                                location.href = "${pageContext.request.contextPath }/productType/findAll?pageNo=" + ${sysProductTypePageInfo.pages};
+                            } else {
+                                $("#errorMsg").tooptip(
+                                    {
+                                        title: "error",
+                                        placement: "center",
+                                        template: "<div class='tooltip errorMsg'>" + result.message + "</div>",
+                                        tigger: "manual"
+                                    }).tooltip("show");
+                            }
+                        },
+                        error: function () {
+                            alert("服务器内容错误!");
+                        }
+                    }
+                );
+            });
         });
 
     </script>
@@ -134,7 +162,8 @@
         <h3 class="panel-title">商品类型管理</h3>
     </div>
     <div class="panel-body">
-        <input type="button" value="添加商品类型" class="btn btn-primary" id="doAddProTpye">
+        <input type="button" value="添加商品类型" class="btn btn-primary" id="doAddProType">
+        <input type="button" value="导出商品类型" class="btn btn-primary" id="doExportProType">
         <div class="modal fade" tabindex="-1" id="ProductType">
             <!-- 窗口声明 -->
             <div class="modal-dialog modal-lg">

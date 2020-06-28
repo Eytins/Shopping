@@ -8,6 +8,7 @@ import com.zte.shopping.entity.ProductType;
 import com.zte.shopping.exception.ProductTypeExistException;
 import com.zte.shopping.exception.RequestParameterException;
 import com.zte.shopping.service.IProductTypeService;
+import com.zte.shopping.util.ExcelUtil;
 import com.zte.shopping.util.ParameterUtil;
 import com.zte.shopping.util.ResponseResult;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.util.List;
 
 /**
@@ -47,7 +51,6 @@ public class ProductTypeController {
         modelAndView.setViewName("backend/productTypeManager");
         return modelAndView;
     }
-
 
     @RequestMapping(value = "/addType")
     @ResponseBody
@@ -140,5 +143,27 @@ public class ProductTypeController {
         }
 
         return result;
+    }
+
+    /*
+     * 将productType导出为excel
+     * */
+    @RequestMapping(value = "exportExcel")
+    @ResponseBody
+    public ResponseResult exportExcel() throws FileNotFoundException {
+        ResponseResult result    = new ResponseResult();
+        ExcelUtil      excelUtil = new ExcelUtil();
+        //利用自定义警告，写在exception中
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\29291\\Desktop\\productTypes.xls");
+            excelUtil.exportStudent(iProductTypeService.findAll(), fileOutputStream);
+            result.setMessage("成功");
+            // 响应状态码为成功,值为:1
+            result.setResponseCode(ResponseCodeConstant.RESPONSE_CODE_SUCCESS);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        return result;
+
     }
 }

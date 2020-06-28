@@ -38,5 +38,8 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="poi-ooxml-3.11-20141221" level="project" />
+    <orderEntry type="library" name="xmlbeans-2.6.0" level="project" />
+    <orderEntry type="library" name="poi-3.11-20141221" level="project" />
   </component>
 </module>
