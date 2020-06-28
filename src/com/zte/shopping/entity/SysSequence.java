@@ -10,7 +10,6 @@ public class SysSequence {
     private String name;
     private String value;
 
-
     public long getId() {
         return id;
     }
@@ -19,7 +18,6 @@ public class SysSequence {
         this.id = id;
     }
 
-
     public String getName() {
         return name;
     }
@@ -27,7 +25,6 @@ public class SysSequence {
     public void setName(String name) {
         this.name = name;
     }
-
 
     public String getValue() {
         return value;

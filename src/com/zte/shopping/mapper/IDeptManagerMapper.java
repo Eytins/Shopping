@@ -25,9 +25,6 @@ public interface IDeptManagerMapper {
 
     void updateStatus(int parseInt, Integer status);
 
-    /**
-     * 根据状态查询出管理员的信息列表
-     */
     List<Dept> selectEnabledDeptList(int deptStatusEnable);
 
 }

@@ -32,13 +32,6 @@ public class UserServiceImpl implements IUserService {
         return this.iUserMapper.dologin(username, password, userRole);
     }
 
-    /**
-     * 注册会员信息
-     * <p>
-     * 注册时要对密码进行加密
-     * 默认新注册的用户均为有效用户
-     * 默认注册的时间为当前时间
-     */
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public void register(User user) throws UserExistException {
         // 根据   账号   查询会员信息
@@ -62,15 +55,6 @@ public class UserServiceImpl implements IUserService {
         iUserMapper.insertUser(user);
     }
 
-    /**
-     * 注意:
-     * 要先到前台页面 http://localhost:8080/shopping_ssm/中先注册一个会员
-     * 然后再后台的会员管理中才能看到
-     * <p>
-     * 会员组合条件查询(动态查询)
-     * 根据前台页面所传递的参数选择合适的条件进行查询
-     * 支持模糊查询
-     */
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public List<User> findByFuzzyParamList(User userParam) {
         User user = new User();
@@ -84,10 +68,6 @@ public class UserServiceImpl implements IUserService {
         return iUserMapper.selectByParamList(user);
     }
 
-    /**
-     * 启用/禁用
-     * 根据 会员id  修改对应  会员的状态
-     */
     public void modifyStatus(String userId, String status) throws RequestParameterException {
         if (ParameterUtil.isnull(userId)) {
             throw new RequestParameterException("用户id不能为空");
@@ -111,9 +91,6 @@ public class UserServiceImpl implements IUserService {
         iUserMapper.updateStatus(Integer.parseInt(userId), userStatus);
     }
 
-    /**
-     * 根据 id  查询用户详情(为修改会员信息服务)
-     */
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
     public User findById(String userId) throws RequestParameterException {
         if (ParameterUtil.isnull(userId)) {
@@ -125,11 +102,6 @@ public class UserServiceImpl implements IUserService {
         return user;
     }
 
-    /**
-     * 根据  会员id  修改会员信息
-     * <p>
-     * 账号不能重复
-     */
     public void modifyById(User user) throws UserExistException {
         // 根据  会员id  与  账号   查询符合条件的会员信息
         User selectUser = iUserMapper.selectByIdAndLoginName(user.getUserId(), user.getLoginName());

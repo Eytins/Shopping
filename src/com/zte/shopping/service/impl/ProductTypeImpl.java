@@ -88,9 +88,6 @@ public class ProductTypeImpl implements IProductTypeService {
         return productType;
     }
 
-    /**
-     * 进入 添加商品页面  后 加载的 商品类型列表数据(已经禁用的商品不能显示在下拉列表中)
-     */
     @Override
     public List<ProductType> findEnableProductTypeList() {
         return iProductMapper.selectByProductTypeStatus(StatusConstant.PRODUCT_TYPE_STATUS_ENABLE);

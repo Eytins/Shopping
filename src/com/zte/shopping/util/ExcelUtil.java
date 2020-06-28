@@ -3,11 +3,19 @@ package com.zte.shopping.util;
 import com.zte.shopping.entity.ProductType;
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.util.CellRangeAddress;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,7 +24,7 @@ import java.util.List;
 
 public class ExcelUtil {
 
-    public void exportStudent(List<ProductType> productTypeList, OutputStream outputStream) {
+    public void exportProductType(List<ProductType> productTypeList, OutputStream outputStream) {
         try {
             // 1.创建一个工作簿Workbook
             HSSFWorkbook workbook = new HSSFWorkbook();
@@ -52,7 +60,6 @@ public class ExcelUtil {
                 // 往提示信息行中加入7列  设置信息行中单元格Cell的内容
                 cellTip.setCellValue(tips[i]);
             }
-
 
             // 4.遍历学生信息列表 塞入到对应的单元格中
             if (productTypeList != null && productTypeList.size() != 0) {
@@ -106,5 +113,42 @@ public class ExcelUtil {
         cellStyle.setFont(font);
 
         return cellStyle;
+    }
+
+    public List<ProductType> produceProductType(CommonsMultipartFile file) throws IOException {
+
+        Workbook          workbook;
+        List<ProductType> productTypeList = new ArrayList<>();
+
+        if (file.getOriginalFilename().matches("^.+\\.(?i)(xls)|(xlsx)$")) {
+            if (file.getOriginalFilename().matches("^.+\\.(?i)(xls)$")) {
+                workbook = new HSSFWorkbook(new FileInputStream(String.valueOf(file)));
+                HSSFSheet sheet = (HSSFSheet) workbook.getSheet("Sheet1");
+                for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
+                    HSSFRow     row         = sheet.getRow(i + 1);
+                    HSSFCell    cell        = row.getCell(1);
+                    HSSFCell    cell1       = row.getCell(2);
+                    ProductType productType = new ProductType();
+                    productType.setName(cell.toString());
+                    productType.setStatus(Integer.parseInt(cell1.toString()));
+                    productTypeList.add(productType);
+                }
+            } else if (file.getOriginalFilename().matches("^.+\\.(?i)(xlsx)$")) {
+                workbook = new XSSFWorkbook(new FileInputStream(String.valueOf(file)));
+                XSSFSheet sheet = (XSSFSheet) workbook.getSheet("Sheet1");
+                for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
+                    XSSFRow     row         = sheet.getRow(i + 1);
+                    XSSFCell    cell        = row.getCell(1);
+                    XSSFCell    cell1       = row.getCell(2);
+                    ProductType productType = new ProductType();
+                    productType.setName(cell.toString());
+                    productType.setStatus(Integer.parseInt(cell1.toString()));
+                    productTypeList.add(productType);
+                }
+            }
+            //todo:添加productTypeList到数据库中
+        }
+
+        return productTypeList;
     }
 }

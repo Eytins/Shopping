@@ -60,9 +60,6 @@ public class StaffController {
         return "backend/login";
     }
 
-    /**
-     * 动态  模糊  查询   管理员信息
-     */
     @RequestMapping("/findFuzzyByParamList")
     public ModelAndView findFuzzyByParamList(Staff staffParameter, String deptId, String pageNo, String pageSize) {
         ModelAndView modelAndView = new ModelAndView();
@@ -94,16 +91,6 @@ public class StaffController {
         return modelAndView;
     }
 
-    /**
-     * 添加管理员
-     * <p>
-     * 员工账号不能重复
-     * 密码需要使用MD5加密
-     * 创建人      为    当前登录员工
-     * 创建时间   为   当前时间
-     * <p>
-     * 默认田间的员工为有效状态
-     */
     @ResponseBody
     @RequestMapping("/addStaff")
     public ResponseResult addStaff(Staff staff, String deptId, HttpSession session) {
@@ -133,17 +120,11 @@ public class StaffController {
         return result;
     }
 
-    /**
-     * 点击 添加管理员   查询有效的部门信息
-     */
     @ModelAttribute("enabledDeptList")
     public List<Dept> loadEnabledDeptList() {
         return iDeptManagerService.findEnabledDeptList();
     }
 
-    /**
-     * 修改员工管理员
-     */
     @ResponseBody
     @RequestMapping("/modifyStaff")
     public ResponseResult modifyStaff(Staff staff, String deptId) {
@@ -167,11 +148,6 @@ public class StaffController {
         return result;
     }
 
-    /**
-     * 做修改管理员操作时  查询出修改页面的管理员信息
-     * <p>
-     * 根据id查询员工信息
-     */
     @ResponseBody
     @RequestMapping("/findById")
     public ResponseResult findById(String staffId) {
@@ -198,9 +174,6 @@ public class StaffController {
         return result;
     }
 
-    /**
-     * 管理员 启用/禁用
-     */
     @ResponseBody
     @RequestMapping("/modifyStaffStatus")
     public ResponseResult modifyStatus(String staffId, String isValid) {

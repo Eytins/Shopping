@@ -7,15 +7,10 @@ package com.zte.shopping.entity;
 public class Product {
 
     private Integer productId;
-
     private String productNo;
-
     private String name;
-
     private Double price;
-
     private String image;
-
     private ProductType productType;
 
     public Product() {

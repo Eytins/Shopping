@@ -45,5 +45,4 @@ public interface StatusConstant {
      */
     int DEPT_STATUS_DISABLE = 0;
 
-
 }

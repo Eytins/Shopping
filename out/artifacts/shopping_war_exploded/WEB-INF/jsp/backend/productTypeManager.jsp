@@ -162,8 +162,21 @@
         <h3 class="panel-title">商品类型管理</h3>
     </div>
     <div class="panel-body">
-        <input type="button" value="添加商品类型" class="btn btn-primary" id="doAddProType">
+        <input type="button" value="添加商品类型" class="btn btn-primary" id="doAddProTpye">
         <input type="button" value="导出商品类型" class="btn btn-primary" id="doExportProType">
+
+        <form action="${pageContext.request.contextPath }/productType/importProductType" method="post"
+              id="addFrmProduct" enctype="multipart/form-data">
+            <div class="row text-left">
+                <div class="col-sm-2">
+                    <a href="javascript:;" class="file">选择文件
+                        <input type="file" name="file" id="importProType">
+                    </a>
+                    <input type="submit" value="导入商品类型" class="btn btn-primary" id="doImportProType">
+                </div>
+            </div>
+        </form>
+
         <div class="modal fade" tabindex="-1" id="ProductType">
             <!-- 窗口声明 -->
             <div class="modal-dialog modal-lg">

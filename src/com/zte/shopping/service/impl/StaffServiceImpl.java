@@ -58,15 +58,6 @@ class StaffServiceImpl implements IStaffService {
         return iStaffMapper.selectFuzzyByParams(staff);
     }
 
-    /**
-     * 添加管理员
-     * <p>
-     * 员工账号不能重复
-     * 密码需要使用MD5加密
-     * 创建人     为   当前登录员工
-     * 创建时间   为   当前时间
-     * 默认创建的员工为有效状态
-     */
     public void addStaff(Staff staff, String deptId, HttpSession session) throws LoginDisabledException, NoPromissionException, StaffExistException {
         // 获取当前登录的员工
         Staff currentStaff = (Staff) session.getAttribute("staff");
@@ -109,9 +100,6 @@ class StaffServiceImpl implements IStaffService {
         iStaffMapper.insertStaff(staff);
     }
 
-    /**
-     * 修改管理员
-     */
     @Override
     public void modifyStaff(Staff staff, String deptId) throws RequestParameterException {
         if (ParameterUtil.isnull(staff.getStaffName())) {
@@ -126,9 +114,6 @@ class StaffServiceImpl implements IStaffService {
         iStaffMapper.updateStaff(staff);
     }
 
-    /**
-     * 做修改管理员操作时  查询出修改页面的管理员信息
-     */
     @Override
     public Staff findById(String staffId) throws RequestParameterException {
         if (ParameterUtil.isnull(staffId)) {
@@ -138,9 +123,6 @@ class StaffServiceImpl implements IStaffService {
         return iStaffMapper.selectById(Integer.parseInt(staffId));
     }
 
-    /**
-     * 管理员 启用/禁用
-     */
     public void modifyStaffStatus(String staffId, String isValid) throws RequestParameterException {
         if (ParameterUtil.isnull(staffId)) {
             throw new RequestParameterException("管理员id不能为空");

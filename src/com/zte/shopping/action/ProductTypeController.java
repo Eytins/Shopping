@@ -11,15 +11,18 @@ import com.zte.shopping.service.IProductTypeService;
 import com.zte.shopping.util.ExcelUtil;
 import com.zte.shopping.util.ParameterUtil;
 import com.zte.shopping.util.ResponseResult;
+import org.apache.commons.fileupload.FileUploadException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.OutputStream;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -150,20 +153,64 @@ public class ProductTypeController {
      * */
     @RequestMapping(value = "exportExcel")
     @ResponseBody
-    public ResponseResult exportExcel() throws FileNotFoundException {
+    public ResponseResult exportExcel() {
         ResponseResult result    = new ResponseResult();
         ExcelUtil      excelUtil = new ExcelUtil();
         //利用自定义警告，写在exception中
         try {
             FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\29291\\Desktop\\productTypes.xls");
-            excelUtil.exportStudent(iProductTypeService.findAll(), fileOutputStream);
+            excelUtil.exportProductType(iProductTypeService.findAll(), fileOutputStream);
+            fileOutputStream.close();
             result.setMessage("成功");
             // 响应状态码为成功,值为:1
             result.setResponseCode(ResponseCodeConstant.RESPONSE_CODE_SUCCESS);
-        } catch (FileNotFoundException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return result;
 
     }
+
+    @RequestMapping(value = "/importProductType", method = {RequestMethod.GET, RequestMethod.POST})
+    public ModelAndView addProduct(@RequestParam("file") CommonsMultipartFile file) throws IOException, RequestParameterException, ProductTypeExistException {
+        ModelAndView modelAndView = new ModelAndView();
+
+        ExcelUtil         excelUtil       = new ExcelUtil();
+        List<ProductType> productTypeList = excelUtil.produceProductType(file);
+
+        for (ProductType productType : productTypeList) {
+            iProductTypeService.addType(productType.getName());
+        }
+
+        modelAndView.setViewName("redirect:findAll");
+        return modelAndView;
+    }
+
+    /*@RequestMapping(value = "/importProductType", method = {RequestMethod.GET, RequestMethod.POST})
+    @ResponseBody
+    public ResponseResult addProduct(@RequestParam("file") CommonsMultipartFile file) throws IOException, RequestParameterException, ProductTypeExistException {
+        ResponseResult result = new ResponseResult();
+        //利用自定义警告，写在exception中
+
+        ExcelUtil         excelUtil       = new ExcelUtil();
+        List<ProductType> productTypeList = excelUtil.produceProductType(file);
+
+        for (ProductType productType : productTypeList) {
+            iProductTypeService.addType(productType.getName());
+            try {
+                result.setMessage("成功");
+                // 响应状态码为成功,值为:1
+                result.setResponseCode(ResponseCodeConstant.RESPONSE_CODE_SUCCESS);
+            } catch (Exception e) {
+                //响应失败，原因：响应状态码为失败,值为:2
+                e.printStackTrace();
+                result.setMessage("服务器内部异常");
+                result.setResponseCode(ResponseCodeConstant.RESPONSE_CODE_FAIL);
+            }
+        }
+
+        return result;
+    }
+*/
+
 }

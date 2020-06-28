@@ -9,6 +9,9 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="commons-fileupload" />
+          <element id="library" level="project" name="poi-ooxml-3.11-20141221" />
+          <element id="library" level="project" name="xmlbeans-2.6.0" />
+          <element id="library" level="project" name="poi-3.11-20141221" />
         </element>
       </element>
     </root>

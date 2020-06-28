@@ -12,7 +12,6 @@ public interface DictConstant {
      */
     String PAGE_NO = "1";
 
-
     /**
      * 分页数据,每页显示条数,默认五条
      */
