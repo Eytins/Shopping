@@ -9,6 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import java.io.FileInputStream;
@@ -119,36 +120,48 @@ public class ExcelUtil {
 
         Workbook          workbook;
         List<ProductType> productTypeList = new ArrayList<>();
+/*
 
-        if (file.getOriginalFilename().matches("^.+\\.(?i)(xls)|(xlsx)$")) {
-            if (file.getOriginalFilename().matches("^.+\\.(?i)(xls)$")) {
-                workbook = new HSSFWorkbook(new FileInputStream(String.valueOf(file)));
+        System.out.println(file.getOriginalFilename());
+
+        if (file.getName().matches("^.+\\.(?i)(xls)|(xlsx)$")) {
+            if (file.getName().matches("^.+\\.(?i)(xls)$")) {
+
+                workbook = new HSSFWorkbook(file.getInputStream());
                 HSSFSheet sheet = (HSSFSheet) workbook.getSheet("Sheet1");
-                for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
-                    HSSFRow     row         = sheet.getRow(i + 1);
-                    HSSFCell    cell        = row.getCell(1);
-                    HSSFCell    cell1       = row.getCell(2);
+                System.out.println(sheet.getPhysicalNumberOfRows());
+                for (int i = 0; i < sheet.getPhysicalNumberOfRows() - 1; i++) {
+                    HSSFRow row   = sheet.getRow(i + 1);
+                    String  cell  = row.getCell(1).getStringCellValue();
+                    double  cell1 = row.getCell(2).getNumericCellValue();
+                    System.out.println(cell1);
                     ProductType productType = new ProductType();
-                    productType.setName(cell.toString());
-                    productType.setStatus(Integer.parseInt(cell1.toString()));
+                    productType.setName(cell);
+                    productType.setStatus(new Double(cell1).intValue());
                     productTypeList.add(productType);
                 }
-            } else if (file.getOriginalFilename().matches("^.+\\.(?i)(xlsx)$")) {
-                workbook = new XSSFWorkbook(new FileInputStream(String.valueOf(file)));
-                XSSFSheet sheet = (XSSFSheet) workbook.getSheet("Sheet1");
-                for (int i = 0; i < sheet.getPhysicalNumberOfRows(); i++) {
-                    XSSFRow     row         = sheet.getRow(i + 1);
-                    XSSFCell    cell        = row.getCell(1);
-                    XSSFCell    cell1       = row.getCell(2);
-                    ProductType productType = new ProductType();
-                    productType.setName(cell.toString());
-                    productType.setStatus(Integer.parseInt(cell1.toString()));
-                    productTypeList.add(productType);
-                }
-            }
-            //todo:添加productTypeList到数据库中
+
+            } else if (file.getName().matches("^.+\\.(?i)(xlsx)$")) {
+*/
+
+        workbook = new XSSFWorkbook(file.getInputStream());
+        XSSFSheet sheet = (XSSFSheet) workbook.getSheet("Sheet1");
+        System.out.println(sheet.getPhysicalNumberOfRows());
+        for (int i = 0; i < sheet.getPhysicalNumberOfRows() - 1; i++) {
+            XSSFRow row   = sheet.getRow(i + 1);
+            String  cell  = row.getCell(1).getStringCellValue();
+            double  cell1 = row.getCell(2).getNumericCellValue();
+            System.out.println(cell1);
+            ProductType productType = new ProductType();
+            productType.setName(cell);
+            productType.setStatus(new Double(cell1).intValue());
+            productTypeList.add(productType);
         }
+/*
+            }
+        }*/
 
         return productTypeList;
     }
 }
+

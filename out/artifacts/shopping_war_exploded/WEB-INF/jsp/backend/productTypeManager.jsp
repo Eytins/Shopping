@@ -61,6 +61,7 @@
                     }
                 );
             });
+
             //AJAX设置当前弹出模态框中的初始值
             $("input[name='toModifyType']").click(function () {
                 $.ajax(
@@ -162,20 +163,41 @@
         <h3 class="panel-title">商品类型管理</h3>
     </div>
     <div class="panel-body">
-        <input type="button" value="添加商品类型" class="btn btn-primary" id="doAddProTpye">
+        <input type="button" value="添加商品类型" class="btn btn-primary" id="doAddProType">
         <input type="button" value="导出商品类型" class="btn btn-primary" id="doExportProType">
+        <input type="button" value="导入商品类型" class="btn btn-primary" id="doImportProType">
 
-        <form action="${pageContext.request.contextPath }/productType/importProductType" method="post"
-              id="addFrmProduct" enctype="multipart/form-data">
-            <div class="row text-left">
-                <div class="col-sm-2">
-                    <a href="javascript:;" class="file">选择文件
-                        <input type="file" name="file" id="importProType">
-                    </a>
-                    <input type="submit" value="导入商品类型" class="btn btn-primary" id="doImportProType">
+        <div class="modal fade" tabindex="-1" id="importProType">
+            <!-- 窗口声明 -->
+            <div class="modal-dialog modal-lg">
+                <!-- 内容声明 -->
+                <div class="modal-content">
+                    <!-- 头部、主体、脚注 -->
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">导入商品类型信息</h4>
+                    </div>
+                    <form action="${pageContext.request.contextPath }/productType/importProductType" method="post"
+                          id="addProductTypeExcelForm" enctype="multipart/form-data">
+                        <div class="modal-body text-center">
+                            <div class="row text-right">
+                                <label for="file" class="col-sm-4 control-label">Excel文件：</label>
+                                <div class="col-sm-4">
+                                    <a href="javascript:;" class="file">选择文件
+                                        <input type="file" name="file" id="file">
+                                    </a>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary addProductType" id="addProductTypeExcel">导入</button>
+                            <button class="btn btn-primary cancel" data-dismiss="modal">取消</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </form>
+        </div>
 
         <div class="modal fade" tabindex="-1" id="ProductType">
             <!-- 窗口声明 -->

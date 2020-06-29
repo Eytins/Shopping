@@ -281,6 +281,8 @@
         <br>
 
         <input type="button" value="添加管理员" class="btn btn-primary" id="doAddManger">
+        <input type="button" value="导出管理员" class="btn btn-primary" id="doExportManger">
+
         <!-- 添加管理员 -->
         <div class="modal fade" tabindex="-1" id="myMangerUser">
             <!-- 窗口声明 -->

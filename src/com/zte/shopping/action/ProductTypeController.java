@@ -171,46 +171,46 @@ public class ProductTypeController {
 
     }
 
+/*    @RequestMapping(value = "importProductType", method = {RequestMethod.GET, RequestMethod.POST})
+    @ResponseBody
+    public ResponseResult addProduct(@RequestParam("file") CommonsMultipartFile file) {
+        ResponseResult result = new ResponseResult();
+
+        //利用自定义警告，写在exception中
+        try {
+            ExcelUtil         excelUtil       = new ExcelUtil();
+            List<ProductType> productTypeList = excelUtil.produceProductType(file);
+
+            for (ProductType productType : productTypeList) {
+                iProductTypeService.addType(productType.getName());
+            }
+            result.setMessage("成功");
+            // 响应状态码为成功,值为:1
+            result.setResponseCode(ResponseCodeConstant.RESPONSE_CODE_SUCCESS);
+        } catch (IOException | RequestParameterException | ProductTypeExistException e) {
+            e.printStackTrace();
+        }
+        return result;
+
+    }*/
+
     @RequestMapping(value = "/importProductType", method = {RequestMethod.GET, RequestMethod.POST})
-    public ModelAndView addProduct(@RequestParam("file") CommonsMultipartFile file) throws IOException, RequestParameterException, ProductTypeExistException {
-        ModelAndView modelAndView = new ModelAndView();
-
+    public ModelAndView addProduct(@RequestParam("file") CommonsMultipartFile file) {
+        ModelAndView      modelAndView    = new ModelAndView();
         ExcelUtil         excelUtil       = new ExcelUtil();
-        List<ProductType> productTypeList = excelUtil.produceProductType(file);
+        List<ProductType> productTypeList;
 
-        for (ProductType productType : productTypeList) {
-            iProductTypeService.addType(productType.getName());
+        try {
+            productTypeList = excelUtil.produceProductType(file);
+            for (ProductType productType : productTypeList) {
+                iProductTypeService.addType(productType.getName());
+            }
+        } catch (IOException | RequestParameterException | ProductTypeExistException e) {
+            e.printStackTrace();
         }
 
-        modelAndView.setViewName("redirect:findAll");
+        modelAndView.setViewName("redirect:findAll?pageNo=" + 1);
         return modelAndView;
     }
-
-    /*@RequestMapping(value = "/importProductType", method = {RequestMethod.GET, RequestMethod.POST})
-    @ResponseBody
-    public ResponseResult addProduct(@RequestParam("file") CommonsMultipartFile file) throws IOException, RequestParameterException, ProductTypeExistException {
-        ResponseResult result = new ResponseResult();
-        //利用自定义警告，写在exception中
-
-        ExcelUtil         excelUtil       = new ExcelUtil();
-        List<ProductType> productTypeList = excelUtil.produceProductType(file);
-
-        for (ProductType productType : productTypeList) {
-            iProductTypeService.addType(productType.getName());
-            try {
-                result.setMessage("成功");
-                // 响应状态码为成功,值为:1
-                result.setResponseCode(ResponseCodeConstant.RESPONSE_CODE_SUCCESS);
-            } catch (Exception e) {
-                //响应失败，原因：响应状态码为失败,值为:2
-                e.printStackTrace();
-                result.setMessage("服务器内部异常");
-                result.setResponseCode(ResponseCodeConstant.RESPONSE_CODE_FAIL);
-            }
-        }
-
-        return result;
-    }
-*/
 
 }
