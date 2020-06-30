@@ -1,6 +1,7 @@
 package com.zte.shopping.service;
 
 import com.zte.shopping.entity.Product;
+import com.zte.shopping.param.ProductParameter;
 import org.apache.commons.fileupload.FileUploadException;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
@@ -23,5 +24,6 @@ public interface IProductService {
 
     Product findById(String id);
 
+    List<Product> findProductFuzzyParamList(ProductParameter parameter);
 
 }

@@ -10,7 +10,7 @@
            value
     </sql>
 
-    <select id="selectByName" parameterType="string" resultType="SysSequence">
+    <select id="selectByName" parameterType="string" resultType="Sequence">
         select
         <include refid="sequenceColumn"/>
         from
@@ -18,7 +18,7 @@
         where name = #{name}
     </select>
 
-    <insert id="insertSequence" parameterType="SysSequence">
+    <insert id="insertSequence" parameterType="Sequence">
         insert into sys_sequence(name, value)
         values (#{name}, #{value})
     </insert>

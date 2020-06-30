@@ -3,7 +3,7 @@ package com.zte.shopping.service.impl;
 import com.zte.shopping.constant.DictConstant;
 import com.zte.shopping.constant.StatusConstant;
 import com.zte.shopping.entity.Dept;
-import com.zte.shopping.entity.SysSequence;
+import com.zte.shopping.entity.Sequence;
 import com.zte.shopping.entity.Staff;
 import com.zte.shopping.exception.DeptExistException;
 import com.zte.shopping.exception.LoginDisabledException;
@@ -81,9 +81,9 @@ public class DeptManagerImpl implements IDeptManagerService {
         sysDept.setStaff(staff);
 
         // DictConstant.DEPT_NO_PREFIX: 部门编号前缀  BM
-        SysSequence sequence = iSequenceMapper.selectByName(DictConstant.DEPT_NO_PREFIX);
+        Sequence sequence = iSequenceMapper.selectByName(DictConstant.DEPT_NO_PREFIX);
         if (sequence == null) {
-            SysSequence sequ = new SysSequence();
+            Sequence sequ = new Sequence();
 
             sequ.setName(DictConstant.DEPT_NO_PREFIX); //  DictConstant.DEPT_NO_PREFIX: 部门编号前缀  BM
             sequ.setValue(DictConstant.DEPT_NO_SEQUENCE_MIN);   // DictConstant.DEPT_NO_SEQUENCE_MIN: 部门编号的序列号最小值为000001
@@ -140,9 +140,9 @@ public class DeptManagerImpl implements IDeptManagerService {
         // 和添加父部门时不同  end
 
         // DictConstant.DEPT_NO_PREFIX: 部门编号前缀  BM
-        SysSequence sequence = iSequenceMapper.selectByName(DictConstant.DEPT_NO_PREFIX);
+        Sequence sequence = iSequenceMapper.selectByName(DictConstant.DEPT_NO_PREFIX);
         if (sequence == null) {
-            SysSequence sequ = new SysSequence();
+            Sequence sequ = new Sequence();
 
             sequ.setName(DictConstant.DEPT_NO_PREFIX); //  DictConstant.DEPT_NO_PREFIX: 部门编号前缀  BM
             sequ.setValue(DictConstant.DEPT_NO_SEQUENCE_MIN);   // DictConstant.DEPT_NO_SEQUENCE_MIN: 部门编号的序列号最小值为000001

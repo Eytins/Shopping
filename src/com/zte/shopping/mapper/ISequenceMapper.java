@@ -1,15 +1,15 @@
 package com.zte.shopping.mapper;
 
-import com.zte.shopping.entity.SysSequence;
+import com.zte.shopping.entity.Sequence;
 
 /**
  * Created by Eytins
  */
 
 public interface ISequenceMapper {
-    SysSequence selectByName(String name);
+    Sequence selectByName(String name);
 
-    void insertSequence(SysSequence sequ);
+    void insertSequence(Sequence sequ);
 
     void updateSequenceValue(String productNoPrefix, String value);
 }

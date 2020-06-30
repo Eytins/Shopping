@@ -124,4 +124,34 @@
         where user_id = #{userId}
     </update>
 
+    <!-- 密码会员修改 (前台 ) -->
+    <update id="updatePassword">
+        update
+            sys_user
+        set password = #{1}
+        where user_id = #{0}
+    </update>
+
+    <!-- 根据  账号    密码  是否有效    查询对应的会员信息 (前台)  -->
+    <select id="selectByLoginNameAndPassword" resultMap="userMapper">
+        select
+        <include refid="userColumn"/>
+        from
+        sys_user
+        where
+        login_name = #{0}
+        and
+        password = #{1}
+        and
+        is_valid = #{2}
+    </select>
+
+    <!-- (前台) 个人中心 根据会员id 修改会员 基本资料(会员的电话以及地址 ) -->
+    <update id="updateUser">
+        update
+            sys_user
+        set phone   = #{1},
+            address = #{2}
+        where user_id = #{0}
+    </update>
 </mapper>

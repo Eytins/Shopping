@@ -85,4 +85,34 @@
         where product_id = #{productId}
     </update>
 
+    <select id="selectByParamList" parameterType="com.zte.shopping.vo.ProductParameterVo" resultMap="productMapper">
+        select
+        p.product_id,
+        p.name,
+        p.price,
+        p.image,
+        pt.id,
+        pt.name,
+        pt.status
+        from
+        sys_product p
+        left join
+        sys_product_type pt
+        on
+        p.product_type_id = pt.id
+        where
+        pt.status = #{status}
+
+        <if test="minPrice != null and minPrice != ''">
+            and p.price &gt;= #{minPrice}
+        </if>
+
+        <if test="maxPrice != null and maxPrice != ''">
+            and p.price &lt;= #{maxPrice}
+        </if>
+
+        <if test="productTypeId != -1 and productTypeId != null and productTypeId != ''">
+            and pt.id = #{productTypeId}
+        </if>
+    </select>
 </mapper>

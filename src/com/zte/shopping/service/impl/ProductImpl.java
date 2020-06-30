@@ -1,9 +1,11 @@
 package com.zte.shopping.service.impl;
 
 import com.zte.shopping.constant.DictConstant;
+import com.zte.shopping.constant.StatusConstant;
 import com.zte.shopping.entity.Product;
 import com.zte.shopping.entity.ProductType;
 import com.zte.shopping.mapper.IProductMapper;
+import com.zte.shopping.param.ProductParameter;
 import com.zte.shopping.service.IProductService;
 import org.apache.commons.fileupload.FileUploadException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,10 +65,8 @@ public class ProductImpl implements IProductService {
 
         try {
             file.transferTo(new File(cp, orifileName));
-        } catch (IllegalStateException e) {
+        } catch (IllegalStateException | IOException e) {
             // org.apache.commons.fileupload.FileUploadException 不是自定义异常
-            throw new FileUploadException("文件上传出错", e);
-        } catch (IOException e) {
             throw new FileUploadException("文件上传出错", e);
         }
     }
@@ -124,4 +124,12 @@ public class ProductImpl implements IProductService {
 
     }
 
+    @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
+    public List<Product> findProductFuzzyParamList(ProductParameter parameter)
+    {
+        // StatusConstant.PRODUCT_TYPE_STATUS_ENABLE 商品类型的状态为启用状态,值为1
+        parameter.setStatus(StatusConstant.PRODUCT_TYPE_STATUS_ENABLE);
+
+        return iProductMapper.selectByParamList(parameter);
+    }
 }

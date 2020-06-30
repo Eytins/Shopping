@@ -6,6 +6,7 @@ import com.zte.shopping.constant.DictConstant;
 import com.zte.shopping.constant.ResponseCodeConstant;
 import com.zte.shopping.entity.Product;
 import com.zte.shopping.entity.ProductType;
+import com.zte.shopping.param.ProductParameter;
 import com.zte.shopping.service.IProductService;
 import com.zte.shopping.service.IProductTypeService;
 import com.zte.shopping.util.ParameterUtil;
@@ -135,4 +136,29 @@ public class ProductController {
         return modelAndView;
     }
 
+    @RequestMapping("/findProductFuzzyParamList")
+    public ModelAndView findProductFuzzyParamList(ProductParameter parameter, String pageNo, String pageSize) {
+        ModelAndView modelAndView = new ModelAndView();
+
+        if (ParameterUtil.isnull(pageNo)) {
+            pageNo = DictConstant.PAGE_NO;
+        }
+
+        if (ParameterUtil.isnull(pageSize)) {
+            pageSize = DictConstant.INDEX_PAGE_SIZE;
+        }
+
+        PageHelper.startPage(Integer.parseInt(pageNo), Integer.parseInt(pageSize));
+
+        List<Product> productList = iProductService.findProductFuzzyParamList(parameter);
+
+        PageInfo<Product> pageProductList = new PageInfo<Product>(productList);
+
+        modelAndView.addObject("pageProductList", pageProductList);
+        modelAndView.addObject("parameter", parameter);
+
+        modelAndView.setViewName("main");
+
+        return modelAndView;
+    }
 }

@@ -179,7 +179,8 @@
         </div>
         <div class="panel-body">
             <!-- login form start -->
-            <form class="form-horizontal ccc" method="post" id="login" action="${pageContext.request.contextPath}/staff/login">
+            <form class="form-horizontal ccc" method="post" id="login"
+                  action="${pageContext.request.contextPath}/staff/login">
                 <div class="form-group">
                     <label class="col-sm-3 control-label">用户名：</label>
                     <div class="col-sm-9">
@@ -197,8 +198,8 @@
                     <div class="col-sm-9">
                         <select class="form-control" name="userRole" id="userRole">
                             <option value="">-请选择身份-</option>
-                            <option value="2002">学生</option>
-                            <option value="2001">管理员</option>
+                            <option value="2002">普通管理员</option>
+                            <option value="2001">超级管理员</option>
                         </select>
                     </div>
                 </div>
@@ -225,7 +226,7 @@
                             <button type="reset" class="btn btn-primary btn-block">重&nbsp;&nbsp;置</button>
                         </div>
                         <div class="col-sm-4">
-                            <button type="submit"  class="btn btn-primary btn-block">登&nbsp;&nbsp;陆</button>
+                            <button type="submit" class="btn btn-primary btn-block">登&nbsp;&nbsp;陆</button>
                         </div>
                     </div>
                 </div>
