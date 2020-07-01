@@ -50,7 +50,6 @@ public class AttacheServiceImpl implements IAttacheService {
         return attacheDao.selectUserLifeImages(DictConstant.ATTACHE_FILE_TYPE_LIFE_IMAGE, user.getUserId());
     }
 
-
     /**
      * 修改用户头像
      * 判断该用户是否拥有头像
@@ -59,31 +58,18 @@ public class AttacheServiceImpl implements IAttacheService {
      */
     public void modifyHeadImage(CommonsMultipartFile file, HttpSession session) throws FileUploadException {
         User user = (User) session.getAttribute("user");
+        //todo:头像为啥不做覆盖操作？
 
         Attache selectAttache = attacheDao.selectUserHeadImage(DictConstant.ATTACHE_FILE_TYPE_HEAD_IMAGE, user.getUserId());
-
         String path = "/upload/" + new SimpleDateFormat("yyyyMMdd").format(new Date());
-
         String realPath = session.getServletContext().getRealPath(path);
-
-		/*File f = new File(realPath);
-		f.mkdirs();*/
-
         String originalFilename = file.getOriginalFilename();
-
-        // "1.jpg"  ---> 1
-        // substring(int beginIndex, int endIndex)  [beginIndex,endIndex)
         String prefix = originalFilename.substring(0, originalFilename.lastIndexOf("."));
-
-        // "1.jpg"  ---> .jpg
         String suffix = originalFilename.substring(originalFilename.lastIndexOf("."), originalFilename.length());
         System.out.println(suffix);
-
-        // 生成UUID, 保证文件名不会重复
         String uuid         = UUID.randomUUID().toString();
         String fileNameOnly = prefix + uuid + suffix;
 
-        // 若没有查询到对应的数据  表时该用户尚未上传头像  则做  添加会员头像  操作
         if (selectAttache == null) {
             Attache attache = new Attache();
             attache.setCreateDate(new Date());
@@ -91,35 +77,27 @@ public class AttacheServiceImpl implements IAttacheService {
             attache.setUser(user);
             attache.setFilePath(path + "/" + fileNameOnly);
 
-            // 添加会员头像
             attacheDao.insertAttache(attache);
         } else {
-            // 若查询到对应数据了  表示该用户已经有头像了  则做  修改会员头像  操作
             selectAttache.setCreateDate(new Date());
             selectAttache.setFilePath(path + "/" + fileNameOnly);
 
-            // 修改会员头像
             attacheDao.updateAttache(selectAttache);
         }
 
         File f = new File(realPath);
         f.mkdirs();
 
-
         try {
             file.transferTo(new File(realPath, fileNameOnly));
             session.setAttribute("headImg", path + "/" + fileNameOnly);
-        } catch (IllegalStateException e) {
-            throw new FileUploadException("上传头像出错");  // org.apache.commons.fileupload.FileUploadException
-        } catch (IOException e) {
+        } catch (IllegalStateException | IOException e) {
             throw new FileUploadException("上传头像出错");
         }
     }
 
-
     @Override
     public void addAttache(Attache attache) {
-        // 添加附件信息
         attacheDao.insertAttache(attache);
     }
 

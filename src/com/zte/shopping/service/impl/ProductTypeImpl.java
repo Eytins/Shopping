@@ -30,7 +30,6 @@ public class ProductTypeImpl implements IProductTypeService {
         return iProductMapper.findAll();
     }
 
-
     @Override
     public void addType(String name) throws RequestParameterException, ProductTypeExistException {
         if (ParameterUtil.isnull(name)) {

@@ -46,7 +46,6 @@ public class ProductImpl implements IProductService {
         ProductType type = new ProductType();
         type.setId(Integer.parseInt(typeId));
         product.setProductType(type);
-        //标识符  + 年月日
         // DictConstant.PRODUCT_NO_PREFIX表示 商品编号前缀 :SP
         product.setProductNo(DictConstant.PRODUCT_NO_PREFIX + new SimpleDateFormat("yyyyMMdd").format(new Date()));
 
@@ -66,7 +65,6 @@ public class ProductImpl implements IProductService {
         try {
             file.transferTo(new File(cp, orifileName));
         } catch (IllegalStateException | IOException e) {
-            // org.apache.commons.fileupload.FileUploadException 不是自定义异常
             throw new FileUploadException("文件上传出错", e);
         }
     }

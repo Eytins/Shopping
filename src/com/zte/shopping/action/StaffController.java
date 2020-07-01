@@ -12,6 +12,7 @@ import com.zte.shopping.exception.RequestParameterException;
 import com.zte.shopping.exception.StaffExistException;
 import com.zte.shopping.service.IDeptManagerService;
 import com.zte.shopping.service.IStaffService;
+import com.zte.shopping.util.ExcelUtil;
 import com.zte.shopping.util.MD5;
 import com.zte.shopping.util.ParameterUtil;
 import com.zte.shopping.util.ResponseResult;
@@ -21,6 +22,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -62,29 +65,28 @@ public class StaffController {
 
     @RequestMapping("/findFuzzyByParamList")
     public ModelAndView findFuzzyByParamList(Staff staffParameter, String deptId, String pageNo, String pageSize) {
+
         ModelAndView modelAndView = new ModelAndView();
 
         if (ParameterUtil.isnull(pageNo)) {
             pageNo = DictConstant.PAGE_NO;
         }
-
         if (ParameterUtil.isnull(pageSize)) {
             pageSize = DictConstant.PAGE_SIZE;
         }
 
-        PageHelper.startPage(Integer.parseInt(pageNo), Integer.parseInt(pageSize));
-
+        // find all staff and dept
         List<Staff> staffList = iStaffService.findFuzzyByParamList(staffParameter, deptId);
+        List<Dept> deptList = iDeptManagerService.findAll();
 
+        PageHelper.startPage(Integer.parseInt(pageNo), Integer.parseInt(pageSize));
         PageInfo<Staff> pageStaffList = new PageInfo<Staff>(staffList);
 
         modelAndView.addObject("pageStaffList", pageStaffList);
         modelAndView.addObject("staffParameter", staffParameter);
         modelAndView.addObject("deptId", deptId);
-
-        //找出所有部门并添加到modelAndView里
-        List<Dept> deptList = iDeptManagerService.findAll();
         modelAndView.addObject("deptList", deptList);
+        modelAndView.addObject("staffList",staffList);
 
         modelAndView.setViewName("backend/staffManager");
 
@@ -197,5 +199,49 @@ public class StaffController {
         }
 
         return result;
+    }
+
+    @RequestMapping(value = "exportExcel")
+    public ModelAndView exportExcel(Staff staffParameter, String deptId, String pageNo, String pageSize) {
+
+        ResponseResult result    = new ResponseResult();
+        ExcelUtil      excelUtil = new ExcelUtil();
+
+        //利用自定义警告，写在exception中
+        try {
+            FileOutputStream fileOutputStream = new FileOutputStream("C:\\Users\\29291\\Desktop\\staff.xls");
+            excelUtil.exportStaff(iStaffService.findFuzzyByParamList(staffParameter, deptId), fileOutputStream);
+            fileOutputStream.close();
+            result.setMessage("成功");
+            // 响应状态码为成功,值为:1
+            result.setResponseCode(ResponseCodeConstant.RESPONSE_CODE_SUCCESS);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ModelAndView modelAndView = new ModelAndView();
+
+        if (ParameterUtil.isnull(pageNo)) {
+            pageNo = DictConstant.PAGE_NO;
+        }
+        if (ParameterUtil.isnull(pageSize)) {
+            pageSize = DictConstant.PAGE_SIZE;
+        }
+
+        // find all staff and dept
+        List<Staff> staffList = iStaffService.findFuzzyByParamList(staffParameter, deptId);
+        List<Dept> deptList = iDeptManagerService.findAll();
+
+        PageHelper.startPage(Integer.parseInt(pageNo), Integer.parseInt(pageSize));
+        PageInfo<Staff> pageStaffList = new PageInfo<Staff>(staffList);
+
+        modelAndView.addObject("pageStaffList", pageStaffList);
+        modelAndView.addObject("staffParameter", staffParameter);
+        modelAndView.addObject("deptId", deptId);
+        modelAndView.addObject("deptList", deptList);
+
+        modelAndView.setViewName("backend/staffManager");
+
+        return modelAndView;
     }
 }

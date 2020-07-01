@@ -28,7 +28,6 @@ public class CodeController {
     public void show(HttpServletRequest request, HttpServletResponse response) throws ImageFormatException, IOException {
         Random random = new Random();
 
-        // java.awt.image.BufferedImage
         BufferedImage image = new BufferedImage(50, 20, BufferedImage.TYPE_INT_RGB);
 
         Graphics graphics = image.getGraphics();
@@ -37,9 +36,9 @@ public class CodeController {
         graphics.setFont(new Font("宋体", Font.BOLD, 10));
 
         // 生成4位的随机数(数字和字母组合)
-        StringBuffer code = CreateCodeUtil.createCode(random);
+        // StringBuffer code = CreateCodeUtil.createCode(random);
         // 生成4位的纯数字验证码
-        // StringBuffer code = CreateCodeUtil.createCodeNum(random);
+        StringBuffer code = CreateCodeUtil.createCodeNum(random);
         // 生成 成语验证码
         //String code = CreateCodeUtil.createCodeIdiom(random);
 
@@ -48,7 +47,7 @@ public class CodeController {
 
         // 将验证码放入到session中
         request.getSession().setAttribute("code", code.toString());
-
+        
         // throws IOException
         OutputStream out = response.getOutputStream();
 

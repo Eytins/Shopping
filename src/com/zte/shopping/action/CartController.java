@@ -92,7 +92,7 @@ public class CartController {
     }
 
     /**
-     * "我的购物车" 中  根据商品ID  删除  "我的购物车" 中的某个商品信息
+     * "我的购物车"中根据商品ID删除"我的购物车"中的某个商品信息
      */
     @ResponseBody
     @RequestMapping("/removeByProductId")
@@ -121,7 +121,7 @@ public class CartController {
     }
 
     /**
-     * "我的购物车" 中 删除选中项(支持多个商品删除)
+     * "我的购物车"中删除选中项(支持多个商品删除)
      */
     @ResponseBody
     @RequestMapping("/removeByProductIds")
@@ -131,7 +131,6 @@ public class CartController {
         CartVo cartVo = (CartVo) session.getAttribute("cart");
 
         try {
-
             for (String productId : productIds) {
                 cartService.removeByProductId(productId, cartVo);
             }
@@ -148,14 +147,14 @@ public class CartController {
     }
 
     /**
-     * "我的购物车" 中  删除我的购物车
+     * "我的购物车" 中删除我的购物车
      */
     @RequestMapping("/clearCart")
     public String clearCart(HttpSession session) {
-        //  创建一个空的购物车  覆盖原来session中同名的key("cart")
+        // 创建一个空的购物车  覆盖原来session中同名的key("cart")
         session.setAttribute("cart", new CartVo());
-
-        return "cart";  // 跳转到cart.jsp页面
+        // 跳转到cart.jsp页面
+        return "cart";
     }
 
     /**
@@ -163,6 +162,7 @@ public class CartController {
      */
     @RequestMapping("/settleAccounts")
     public String settleAccounts() {
-        return "order";   // 跳转到order.jsp
+        // 跳转到order.jsp
+        return "order";
     }
 }

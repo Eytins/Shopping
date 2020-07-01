@@ -11,6 +11,6 @@ public class test {
     @Test
     public void makeMD5() {
         MD5 md5 = new MD5();
-        System.out.println(md5.md5Change("lizhe"));
+        System.out.println(md5.md5Change("admin"));
     }
 }

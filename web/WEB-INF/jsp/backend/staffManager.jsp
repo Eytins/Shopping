@@ -30,6 +30,21 @@
         $("#role").find("option[value='${staffParameter.role }']").attr("selected", true);
         $("#isValid").find("option[value='${staffParameter.isValid }']").attr("selected", true);
 
+        $("#staffName2").val("${staffParameter.staffName }");
+        $("#loginName2").val("${staffParameter.loginName }");
+        $("#phone2").val("${staffParameter.phone }");
+        $("#email2").val("${staffParameter.email }");
+        $("#deptId2").find("option[value='${deptId }']").attr("selected", true);
+        $("#role2").find("option[value='${staffParameter.role }']").attr("selected", true);
+        $("#isValid2").find("option[value='${staffParameter.isValid }']").attr("selected", true);
+
+        const dept = document.getElementById('deptId2');
+        const role = document.getElementById('role2');
+        const valid = document.getElementById('isValid2');
+        dept.style.visibility = 'hidden';
+        role.style.visibility = 'hidden';
+        valid.style.visibility = 'hidden';
+
         var pages;
 
         if ("${pageStaffList.pages } == 0") {
@@ -275,13 +290,84 @@
                 <!-- 添加  清空 按钮 -->
                 <input type="button" value="清空" class="btn btn-primary" id="res">
             </form>
+
+            <%----------------------------------------------------------------------------------%>
+            <form class="form-inline" action="${pageContext.request.contextPath }/staff/exportExcel" id="exportForm"
+                  method="post">
+
+                <input type="submit" value="导出管理员" class="btn btn-primary" id="doExportManger" onclick="submitForm()">
+                <input type="button" value="添加管理员" class="btn btn-primary" id="doAddManger">
+
+                <div class="form-group">
+                    <label for="staffName"></label>
+                    <!-- 修改 id=userName" 为  id="staffName"
+                                  添加  name="staffName" -->
+                    <input type="hidden" class="form-control" id="staffName2" name="staffName" placeholder="请输入姓名">
+                </div>
+
+                <div class="form-group">
+                    <label for="loginName"></label>
+                    <!-- 添加  name="loginName"  -->
+                    <input type="hidden" class="form-control" id="loginName2" name="loginName" placeholder="请输入帐号">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone"></label>
+                    <!-- 添加  name="phone"  -->
+                    <input type="hidden" class="form-control" id="phone2" name="phone" placeholder="请输入电话">
+                </div>
+
+                <div class="form-group">
+                    <label for="email"></label>
+                    <!-- 添加  name="email"  -->
+                    <input type="hidden" class="form-control" id="email2" name="email" placeholder="请输入邮箱">
+                </div>
+
+                <div class="form-group">
+                    <label for="deptId"></label>
+                    <!-- 添加 id="deptId" -->
+                    <select class="form-control" id="deptId2" name="deptId" hidden="hidden">
+                        <option value="-1">--全部--</option>
+
+                        <!-- 和StaffController类中的 @ModelAttribute("deptList") 相对应-->
+                        <c:forEach items="${deptList }" var="dept">
+                            <option value="${dept.deptId }">${dept.deptName }</option>
+                        </c:forEach>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="role"></label>
+                    <!-- 添加 id="role" -->
+                    <select type="hidden" class="form-control" id="role2" name="role">
+                        <option value="-1">--全部--</option>
+                        <option value="2001">系统管理员</option>
+                        <option value="2002">普通管理员</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="isValid"></label>
+                    <!-- 添加 id="isValid" -->
+                    <select class="form-control" id="isValid2" name="isValid">
+                        <option value="-1">--全部--</option>
+                        <option value="1">有效</option>
+                        <option value="0">无效</option>
+                    </select>
+                </div>
+            </form>
+
+            <script type="text/javascript">
+                function submitForm1() {
+                    document.getElementById("searchForm").submit();
+                }
+
+                function submitForm() {
+                    document.getElementById("exportForm").submit();
+                }
+            </script>
+
+            <%----------------------------------------------------------------------------------%>
         </div>
-
-        <br>
-        <br>
-
-        <input type="button" value="添加管理员" class="btn btn-primary" id="doAddManger">
-        <input type="button" value="导出管理员" class="btn btn-primary" id="doExportManger">
 
         <!-- 添加管理员 -->
         <div class="modal fade" tabindex="-1" id="myMangerUser">

@@ -34,7 +34,6 @@ public class DeptManagerController {
     public ModelAndView findAll(String pageNo, String pageSize) {
         ModelAndView modelAndView = new ModelAndView();
 
-
         if (ParameterUtil.isnull(pageNo)) {
             pageNo = DictConstant.PAGE_NO;
         }
@@ -42,7 +41,6 @@ public class DeptManagerController {
         if (ParameterUtil.isnull(pageSize)) {
             pageSize = DictConstant.PAGE_SIZE;
         }
-
 
         PageHelper.startPage(Integer.parseInt(pageNo), Integer.parseInt(pageSize));
 
@@ -106,7 +104,7 @@ public class DeptManagerController {
         return result;
     }
 
-    //部门编号的创建规则:部门前缀BM + 当前年月日  + 序列号
+    //部门编号的创建规则:部门前缀BM+当前年月日+序列号
     @ResponseBody
     @RequestMapping("/addDept")
     public ResponseResult addFatherDept(String deptName, String remark, HttpSession session) {

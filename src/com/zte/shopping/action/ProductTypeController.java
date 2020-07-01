@@ -171,7 +171,7 @@ public class ProductTypeController {
 
     }
 
-/*    @RequestMapping(value = "importProductType", method = {RequestMethod.GET, RequestMethod.POST})
+    /*    @RequestMapping(value = "importProductType", method = {RequestMethod.GET, RequestMethod.POST})
     @ResponseBody
     public ResponseResult addProduct(@RequestParam("file") CommonsMultipartFile file) {
         ResponseResult result = new ResponseResult();

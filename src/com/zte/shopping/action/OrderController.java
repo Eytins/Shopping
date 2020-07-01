@@ -28,7 +28,7 @@ public class OrderController {
     private IOrderService orderService;
 
     /**
-     * 生成订单信息 以及  该订单名下的所有明细信息
+     * 生成订单信息以及该订单名下的所有明细信息
      * 添加一个订单
      * 添加多个明细
      */
@@ -47,7 +47,6 @@ public class OrderController {
 
     /**
      * "我的订单"
-     * <p>
      * 查询该会员下的订单信息
      */
     @RequestMapping("/findAll")

@@ -11,12 +11,12 @@ import java.util.List;
 public interface IAttacheMapper {
 
     /**
-     * 根据   附件的类型    与    所属用户的id   查询对应的用户头像
+     * 根据附件的类型与所属用户的id查询对应的用户头像
      */
     Attache selectUserHeadImage(String attacheFileTypeHeadImage, Integer userId);
 
     /**
-     * 根据   附件的类型    与    所属用户的id   查询对应的用户生活照信息
+     * 根据附件的类型与所属用户的id查询对应的用户生活照信息
      */
     List<Attache> selectUserLifeImages(String attacheFileTypeLifeImages, Integer userId);
 

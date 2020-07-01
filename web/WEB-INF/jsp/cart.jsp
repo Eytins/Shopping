@@ -218,11 +218,6 @@
             <c:forEach items="${cart.items}" var="item" varStatus="i">
                 <tr>
                     <td>
-                        <!--
-		                                                                          添加
-		                             name="productIds"
-		                             value="${item.product.productId }"
-		                        -->
                         <input type="checkbox" name="productIds" value="${item.product.productId }">
                     </td>
                     <td>${i.count }</td>
@@ -230,23 +225,14 @@
                     <td><img src="${pageContext.request.contextPath }${item.product.image }" alt="" width="60"
                              height="60"></td>
                     <td>
-                        <!--
-                                                                         修改value属性的值
-                                                                         添加 name="num"
-                        -->
                         <input type="text" value="${item.num }" size="5" name="num">
                     </td>
                     <td>${item.price }</td>
                     <td>
-                        <!-- 添加  name="modify" -->
                         <button class="btn btn-success" type="button" name="modify"><span
                                 class="glyphicon glyphicon-edit" aria-hidden="true"></span>修改
                         </button>
 
-                        <!--
-                                                                         注意这里不能用id
-                                                                         添加  name="removeById"
-                        -->
                         <button class="btn btn-danger" type="button" onclick="javaScript:return confirm('是否确认删除');"
                                 name="removeById">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
@@ -260,15 +246,11 @@
 
                     <button class="btn btn-warning margin-right-15" type="submit"> 删除选中项</button>
 
-                    <!-- 把button改成 a链接 -->
-                    <!-- <button class="btn btn-warning  margin-right-15" type="button" > 清空购物车</button> -->
                     <a class="btn btn-warning  margin-right-15"
                        href="${pageContext.request.contextPath}/cart/clearCart"> 清空购物车</a>
 
-
                     <button class="btn btn-warning margin-right-15" type="button" id="shopping"> 继续购物</button>
 
-                    <!-- 修改href属性值 -->
                     <a href="${pageContext.request.contextPath}/cart/settleAccounts">
                         <button class="btn btn-warning " type="button"> 结算</button>
                     </a>
@@ -284,14 +266,6 @@
     </form>
 </div>
 <!-- content end-->
-
-<!-- footers start -->
-<!--
-<div class="footers">
-                         版权所有:&nbsp; &nbsp; 南京中兴  liyan@zte.com
-</div>
--->
-<!-- footers end -->
 
 <!-- 修改密码模态框 -->
 <div class="modal fade" id="modifyPasswordModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

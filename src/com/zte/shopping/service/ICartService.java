@@ -10,10 +10,10 @@ import com.zte.shopping.vo.CartVo;
 
 public interface ICartService {
 
-    public void addCart(CartVo cartVo, String productId) throws RequestParameterException, UserNotLoginException;
+    void addCart(CartVo cartVo, String productId) throws RequestParameterException, UserNotLoginException;
 
-    public void modifyNum(String productId, String num, CartVo cartVo) throws RequestParameterException;
+    void modifyNum(String productId, String num, CartVo cartVo) throws RequestParameterException;
 
-    public void removeByProductId(String productId, CartVo cartVo) throws RequestParameterException;
+    void removeByProductId(String productId, CartVo cartVo) throws RequestParameterException;
 
 }
